@@ -65,6 +65,7 @@ class Connection
             'http_errors' => true,
             'handler' => $handlerStack,
             'expect' => false,
+            'verify' => false,
         ]);
 
         return $this->client;
@@ -370,10 +371,11 @@ class Connection
     private function formatUrl($url, $method = 'get')
     {
         if ($this->testing) {
-            return 'http://' . $this->educator_slug . 'testing.eduframe.nl/api/v1';
+            // return 'http://' . $this->educator_slug . '.testing.edufra.me/api/v1' . '/' . $url;
+            return 'http://' . $this->educator_slug . '.lvh.me:3000/api/v1' . '/' . $url;
         }
 
-        return str_replace('{educator_slug}', $this->educator_slug, $this->apiUrl) . '/' . $url . '.json';
+        return str_replace('{educator_slug}', $this->educator_slug, $this->apiUrl) . '/' . $url;
     }
 
     /**

@@ -1,11 +1,15 @@
 <?php
 
-namespace Eduframe\Resource;
+namespace Eduframe\Resources;
 
 use Eduframe\Resource;
+use Eduframe\Traits\FindAll;
 
 class Course extends Resource
 {
+
+    use FindAll;
+
     /**
      * @var array
      */
