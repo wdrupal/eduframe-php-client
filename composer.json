@@ -1,0 +1,30 @@
+{
+  "name": "luukvh/eduframe-php-client",
+  "type": "library",
+  "description": "A PHP Client for the Eduframe V1 API",
+  "keywords": [
+    "api",
+    "php",
+    "eduframe"
+  ],
+  "homepage": "https://github.com/LuukvH/eduframe-php-client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Luuk van Hulten",
+      "email": "luuk@drieam.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Eduframe\\": "src/"
+    }
+  }
+}
