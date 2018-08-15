@@ -203,7 +203,7 @@ abstract class Resource implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        return $this->json();
+        return $this->attributes();
     }
 
     /**
