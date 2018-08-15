@@ -8,7 +8,7 @@ use Eduframe\Traits\FindAll;
 class Course extends Resource
 {
 
-    use FindAll;
+    use FindAll, FindOne;
 
     /**
      * @var array
@@ -37,5 +37,4 @@ class Course extends Resource
      * @var string
      */
     protected $namespace = 'course';
-
 }

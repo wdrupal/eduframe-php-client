@@ -61,12 +61,17 @@ class Connection
             $handlerStack->push($middleWare);
         }
 
-        $this->client = new Client([
+        $args = [
             'http_errors' => true,
             'handler' => $handlerStack,
             'expect' => false,
-            'verify' => false,
-        ]);
+        ];
+
+        if ($this->isTesting()){
+            $args['verify'] = false;
+        }
+
+        $this->client = new Client($args);
 
         return $this->client;
     }
@@ -111,7 +116,7 @@ class Connection
         // Add default json headers to the request
         $headers = array_merge($headers, [
             'Accept' => 'application/json',
-            'Content-Type' => 'application/json'
+            // 'Content-type' => 'application/json'
         ]);
 
         // If access token is not set or token has expired, acquire new token

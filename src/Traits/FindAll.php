@@ -30,7 +30,7 @@ trait FindAll
      * @throws \Eduframe\Exceptions\ApiException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getAll($params = [])
+    public function all($params = [])
     {
         $result = $this->connection()->get($this->getEndpoint(), $params, true);
 
