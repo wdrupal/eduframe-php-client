@@ -4,7 +4,7 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 
-class Meeting extends Resource
+class Address extends Resource
 {
 
     /**
@@ -12,11 +12,10 @@ class Meeting extends Resource
      */
     protected $fillable = [
         'id',
-        'planned_course_id',
-        'description',
-        'start_date',
-        'start_date_time',
-        'end_date_time',
+        'address',
+        'postal_code',
+        'city',
+        'country',
         'updated_at',
         'created_at'
     ];
@@ -24,10 +23,10 @@ class Meeting extends Resource
     /**
      * @var string
      */
-    protected $endpoint = 'meetings';
+    protected $endpoint = 'addresses';
 
     /**
      * @var string
      */
-    protected $namespace = 'meeting';
+    protected $namespace = 'address';
 }

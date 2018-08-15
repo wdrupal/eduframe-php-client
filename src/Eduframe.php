@@ -3,6 +3,7 @@
 namespace Eduframe;
 
 use Eduframe\Resources\Course;
+use Eduframe\Resources\Customer;
 use Eduframe\Resources\PlannedCourse;
 
 /**
@@ -43,6 +44,15 @@ class Eduframe
     public function planned_course($attributes = [])
     {
         return new PlannedCourse($this->connection, $attributes);
+    }
+
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\Customer
+     */
+    public function customer($attributes = [])
+    {
+        return new Customer($this->connection, $attributes);
     }
 
     /**
