@@ -2,7 +2,9 @@
 
 namespace Eduframe;
 
-abstract class Resource
+use JsonSerializable;
+
+abstract class Resource implements JsonSerializable
 {
     const NESTING_TYPE_ARRAY_OF_OBJECTS = 0;
     const NESTING_TYPE_NESTED_OBJECTS = 1;
@@ -190,6 +192,18 @@ abstract class Resource
         } else {
             return $this->json();
         }
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return $this->json();
     }
 
     /**
