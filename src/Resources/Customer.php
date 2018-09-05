@@ -22,6 +22,8 @@ class Customer extends Resource
         'company_name',
         'email',
         'phone',
+        #'wants_newsletter',
+        #'roles',
         'address',
         'updated_at',
         'created_at'

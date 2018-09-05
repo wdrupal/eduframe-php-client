@@ -14,11 +14,16 @@ class Meeting extends Resource
         'id',
         'planned_course_id',
         'description',
-        'start_date',
+        'description_dashboard',
+        'meeting_location_id',
         'start_date_time',
         'end_date_time',
+        'date',
+        'date_string',
         'updated_at',
-        'created_at'
+        'created_at',
+        'start_time',
+        'end_time'
     ];
 
     /**
