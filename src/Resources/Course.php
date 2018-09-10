@@ -18,15 +18,22 @@ class Course extends Resource
         'id',
         'slug',
         'name',
+        'position',
+        'meta_title',
+        'meta_description',
+        'code',
+        'duration',
+        'starting_price',
+        'signup_url',
+        'slug_history',
         'avatar_url',
         'avatar_thumb_url',
-        'code',
         'avatar',
-        'starting_price',
         'category_id',
         'level',
+        'result',
         'updated_at',
-        'created_at'
+        'created_at',
     ];
 
     /**

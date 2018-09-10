@@ -29,6 +29,8 @@ class PlannedCourse extends Resource
         'meetings',
         'updated_at',
         'created_at'
+        #'has_available_places',
+        #'teachers',
     ];
 
     /**
