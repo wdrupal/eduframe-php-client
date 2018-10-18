@@ -38,7 +38,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\Address
      */
-    public function address($attributes = [])
+    public function addresses($attributes = [])
     {
         return new Address($this->connection, $attributes);
     }
@@ -47,7 +47,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\Course
      */
-    public function course($attributes = [])
+    public function courses($attributes = [])
     {
         return new Course($this->connection, $attributes);
     }
@@ -56,7 +56,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\Customer
      */
-    public function customer($attributes = [])
+    public function customers($attributes = [])
     {
         return new Customer($this->connection, $attributes);
     }
@@ -74,7 +74,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\Enrollment
      */
-    public function enrollment($attributes = [])
+    public function enrollments($attributes = [])
     {
         return new Enrollment($this->connection, $attributes);
     }
@@ -83,7 +83,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\Meeting
      */
-    public function meeting($attributes = [])
+    public function meetings($attributes = [])
     {
         return new Meeting($this->connection, $attributes);
     }
@@ -92,7 +92,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\PlannedCourse
      */
-    public function planned_course($attributes = [])
+    public function planned_courses($attributes = [])
     {
         return new PlannedCourse($this->connection, $attributes);
     }
@@ -101,7 +101,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\Teacher
      */
-    public function teacher($attributes = [])
+    public function teachers($attributes = [])
     {
         return new Teacher($this->connection, $attributes);
     }
