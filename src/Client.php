@@ -16,7 +16,7 @@ use Eduframe\Resources\Teacher;
  * Class Eduframe
  * @package Eduframe
  */
-class Eduframe
+class Client
 {
     /**
      * The HTTP connection
@@ -29,9 +29,21 @@ class Eduframe
      * Eduframe constructor.
      * @param \Eduframe\Connection $connection
      */
-    public function __construct(Connection $connection)
+    public function __construct(String $educator_slug, String $access_token)
     {
-        $this->connection = $connection;
+	    $connection = new Connection();
+
+	    $connection->setAccessToken( $access_token );
+	    $connection->setEducatorSlug( $educator_slug );
+
+	    try {
+		    $connection->connect();
+
+		    return new Client( $connection );
+	    } catch
+	    ( \Exception $e ) {
+		    throw new Exception( 'Could not connect to Eduframe: ' . $e->getMessage() );
+	    }
     }
 
     /**
@@ -65,7 +77,7 @@ class Eduframe
      * @param array $attributes
      * @return \Eduframe\Resources\CustomerEnrollment
      */
-    public function customer_enrollment($attributes = [])
+    public function customer_enrollments($attributes = [])
     {
         return new CustomerEnrollment($this->connection, $attributes);
     }
