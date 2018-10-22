@@ -34,10 +34,8 @@ class Data extends Resource {
 	/**
 	 * @var array
 	 */
-	protected $multipleNestedEntities = [
-		'field' => [
-			'entity' => Field::class,
-			'type' => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
+	protected $singleNestedEntities = [
+		'field' => Field::class,
 	];
+	
 }
