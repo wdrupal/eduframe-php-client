@@ -3,9 +3,12 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
+use Eduframe\Traits\FindAll;
 
 class Meeting extends Resource
 {
+
+	use FindAll;
 
     /**
      * @var array

@@ -3,6 +3,7 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
+use Eduframe\Resources\Plugins\Data;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
@@ -34,6 +35,7 @@ class Course extends Resource
         'result',
         'updated_at',
         'created_at',
+	    'plugin_data',
     ];
 
     /**
@@ -45,4 +47,14 @@ class Course extends Resource
      * @var string
      */
     protected $namespace = 'course';
+
+	/**
+	 * @var array
+	 */
+	protected $multipleNestedEntities = [
+		'plugin_data' => [
+			'entity' => Data::class,
+			'type' => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
+	];
 }

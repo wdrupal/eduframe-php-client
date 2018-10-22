@@ -27,10 +27,9 @@ class PlannedCourse extends Resource
         'cost_scheme',
         'cost',
         'meetings',
+	    'teachers',
         'updated_at',
         'created_at'
-        #'has_available_places',
-        #'teachers',
     ];
 
     /**
@@ -50,6 +49,10 @@ class PlannedCourse extends Resource
         'meetings' => [
             'entity' => Meeting::class,
             'type' => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
+        ],
+        'teachers' => [
+	        'entity' => Teacher::class,
+	        'type' => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
         ],
     ];
 }

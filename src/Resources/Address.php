@@ -6,7 +6,6 @@ use Eduframe\Resource;
 
 class Address extends Resource
 {
-
     /**
      * @var array
      */
