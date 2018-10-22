@@ -37,5 +37,5 @@ class Data extends Resource {
 	protected $singleNestedEntities = [
 		'field' => Field::class,
 	];
-	
+
 }
