@@ -32,4 +32,13 @@ class Teacher extends Resource
      */
     protected $namespace = 'teacher';
 
+	/**
+	 * @var array
+	 */
+	protected $multipleNestedEntities = [
+		'plugin_data' => [
+			'entity' => Data::class,
+			'type' => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
+	];
 }
