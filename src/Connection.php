@@ -361,9 +361,6 @@ class Connection {
 	 */
 	private function formatUrl( $url, $method = 'get' ) {
 		if ( $this->testing ) {
-//	        return 'http://' . $this->educator_slug . '.lvh.me:3000/api/v1' . '/' . $url;
-//	        return 'http://educator-with-canvas.lvh.me:3000/admin/courses
-//            return 'https://' . $this->educator_slug . '.edufra.me/api/v1' . '/' . $url;
 			return 'https://' . $this->educator_slug . '.edufra.me/api/v1' . '/' . $url;
 		}
 
