@@ -33,5 +33,4 @@ class Enrollment extends Resource {
 	 * @var string
 	 */
 	protected $namespace = 'enrollment';
-
 }
