@@ -7,30 +7,31 @@ use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
 
-class Teacher extends Resource
-{
+class Teacher extends Resource {
 
-    use FindAll, FindOne;
+	use FindAll, FindOne;
 
+	/**
+	 * @var array
+	 */
+	protected $fillable = [
+		'id',
+		'teacher_description',
+		'avatar_url',
+		'slug',
+		'updated_at',
+		'created_at'
+	];
 
-    /**
-     * @var array
-     */
-    protected $fillable = [
-        'teacher_description',
-        'avatar_url',
-        'slug'
-    ];
+	/**
+	 * @var string
+	 */
+	protected $endpoint = 'teachers';
 
-    /**
-     * @var string
-     */
-    protected $endpoint = 'teachers';
-
-    /**
-     * @var string
-     */
-    protected $namespace = 'teacher';
+	/**
+	 * @var string
+	 */
+	protected $namespace = 'teacher';
 
 	/**
 	 * @var array
@@ -38,7 +39,7 @@ class Teacher extends Resource
 	protected $multipleNestedEntities = [
 		'plugin_data' => [
 			'entity' => Data::class,
-			'type' => self::NESTING_TYPE_NESTED_OBJECTS,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
 	];
 }

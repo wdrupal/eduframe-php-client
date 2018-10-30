@@ -21,6 +21,9 @@ $data = [];
 //$data = $client->teachers()->all();
 //$data = $client->meetings()->all(['planned_course_id', ]);
 
+$data = $client->courses()->find( 240, [ 'include' => 'plugin_data.field' ] );
+$data = $data->creditDefinitions()->all();
+
 header( "Content-Type: application/json" );
 
 echo json_encode( $data );

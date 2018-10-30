@@ -6,53 +6,54 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class PlannedCourse extends Resource
-{
+class PlannedCourse extends Resource {
 
-    use FindAll, FindOne;
+	use FindAll, FindOne;
 
-    /**
-     * @var array
-     */
-    protected $fillable = [
-        'id',
-        'type',
-        'course_id',
-        'start_date',
-        'end_date',
-        'status',
-        'duration_in_days',
-        'duration_in_hours',
-        'availability_state',
-        'cost_scheme',
-        'cost',
-        'meetings',
-	    'teachers',
-        'updated_at',
-        'created_at'
-    ];
+	/**
+	 * @var array
+	 */
+	protected $fillable = [
+		'id',
+		'type',
+		'course_id',
+		'start_date',
+		'end_date',
+		'status',
+		'duration_in_days',
+		'duration_in_hours',
+		'availability_state',
+		'max_participants',
+		'requested_and_active_and_completed_enrollments_count',
+		'cost_scheme',
+		'cost',
+		'meetings',
+		'teachers',
+		'updated_at',
+		'created_at'
+	];
 
-    /**
-     * @var string
-     */
-    protected $endpoint = 'planned_courses';
+	/**
+	 * @var string
+	 */
+	protected $endpoint = 'planned_courses';
 
-    /**
-     * @var string
-     */
-    protected $namespace = 'planned_course';
+	/**
+	 * @var string
+	 */
+	protected $namespace = 'planned_course';
 
-    /**
-     * @var array
-     */
-    protected $multipleNestedEntities = [
-        'meetings' => [
-            'entity' => Meeting::class,
-            'type' => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
-        ],
-        'teachers' => [
-	        'entity' => Teacher::class,
-	        'type' => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
-        ],
-    ];
+	/**
+	 * @var array
+	 */
+	protected $multipleNestedEntities = [
+		'meetings' => [
+			'entity' => Meeting::class,
+			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
+		],
+		'teachers' => [
+			'entity' => Teacher::class,
+			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
+		],
+	];
 }
