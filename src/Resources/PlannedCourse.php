@@ -37,6 +37,11 @@ class PlannedCourse extends Resource {
 	/**
 	 * @var string
 	 */
+	protected $model_name = 'PlannedCourse';
+
+	/**
+	 * @var string
+	 */
 	protected $endpoint = 'planned_courses';
 
 	/**

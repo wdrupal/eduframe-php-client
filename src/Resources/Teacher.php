@@ -28,6 +28,11 @@ class Teacher extends Resource {
 	/**
 	 * @var string
 	 */
+	protected $model_name = 'User';
+
+	/**
+	 * @var string
+	 */
 	protected $endpoint = 'teachers';
 
 	/**

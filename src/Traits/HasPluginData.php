@@ -42,7 +42,7 @@ trait HasPluginData {
 		$plugin_data = $this->get_plugin_data( $title );
 		if ( ! $plugin_data ) {
 			$plugin_data             = new Data( $this->connection );
-			$plugin_data->model_type = ucfirst( $this->namespace );
+			$plugin_data->model_type = $this->model_name;
 			$plugin_data->model_id   = $this->attributes[$this->primaryKey];
 			$plugin_data->title      = $title;
 		}
