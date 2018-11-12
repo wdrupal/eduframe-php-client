@@ -22,7 +22,8 @@ $data = [];
 //$data = $client->meetings()->all(['planned_course_id', ]);
 
 //$data = $client->courses()->find( 240, [ 'include' => 'plugin_data.field' ] );
-$data = $client->categories()->all( [ 'include' => 'plugin_data.field' ] );
+//$data = $client->categories()->all( [ 'include' => 'plugin_data.field' ] );
+$data = $client->courses()->all( [ 'include' => 'plugin_data.field,course_tab_contents' ] );
 
 header( "Content-Type: application/json" );
 
