@@ -17,6 +17,9 @@ class Teacher extends Resource {
 	 */
 	protected $fillable = [
 		'id',
+		'first_name',
+		'middle_name',
+		'last_name',
 		'teacher_description',
 		'avatar_url',
 		'slug',
