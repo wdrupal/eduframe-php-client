@@ -7,29 +7,30 @@ use Eduframe\Resource;
 /**
  * @property integer id
  */
-class CourseTabContent extends Resource {
+class CourseTab extends Resource {
 
 	/**
 	 * @var array
 	 */
 	protected $fillable = [
-		'content',
+		'name',
+		'position',
 	];
 
 	/**
 	 * @var string
 	 */
-	protected $model_name = 'CourseTabContent';
+	protected $model_name = 'CourseTab';
 
 	/**
 	 * @var string
 	 */
-	protected $endpoint = 'course_tab_contents';
+	protected $endpoint = 'course_tabs';
 
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'course_tab_content';
+	protected $namespace = 'course_tab';
 
 	/**
 	 * @var array
