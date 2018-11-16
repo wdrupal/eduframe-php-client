@@ -14,6 +14,7 @@ class CourseTabContent extends Resource {
 	 */
 	protected $fillable = [
 		'content',
+		'course_tab',
 	];
 
 	/**
