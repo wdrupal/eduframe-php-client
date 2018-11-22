@@ -3,11 +3,12 @@
 namespace Eduframe\Resources\Plugins;
 
 use Eduframe\Resource;
+use Eduframe\Traits\Removable;
 use Eduframe\Traits\Storable;
 
 class Data extends Resource {
 
-	use Storable;
+	use Storable, Removable;
 
 	/**
 	 * @var array

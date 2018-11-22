@@ -23,7 +23,7 @@ trait HasPluginData {
 	 * @param $name
 	 * @return mixed
 	 */
-	private function get_plugin_data( $title ) {
+	public function get_plugin_data( $title ) {
 		$results = array_filter( $this->plugin_data, function ( $plugin_data ) use ( $title ) {
 			return ( $plugin_data->field->title === $title );
 		} );

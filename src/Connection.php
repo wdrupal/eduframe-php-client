@@ -239,7 +239,7 @@ class Connection {
 	 * @throws ApiException
 	 * @throws \GuzzleHttp\Exception\GuzzleException
 	 */
-	public function delete( $url, $body ) {
+	public function delete( $url, $body = null ) {
 		try {
 			$request  = $this->createRequestNoJson( 'DELETE', $this->formatUrl( $url, 'delete' ), $body );
 			$response = $this->client()->send( $request );
