@@ -3,32 +3,33 @@
 namespace Eduframe\Resources\Credits;
 
 use Eduframe\Resource;
+use Eduframe\Resources\Category;
 
-class Definition extends Resource {
+class Type extends Resource {
 
 	/**
 	 * @var array
 	 */
 	protected $fillable = [
 		'id',
-		'credits',
-		'type'
+		'name',
+		'category'
 	];
 
 	/**
 	 * @var string
 	 */
-	protected $endpoint = 'credit_definitions';
+	protected $endpoint = 'credit_type';
 
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'credit_definition';
+	protected $namespace = 'credit_type';
 
 	/**
 	 * @var array
 	 */
 	protected $singleNestedEntities = [
-		'type' => Type::class,
+		'category' => Category::class,
 	];
 }
