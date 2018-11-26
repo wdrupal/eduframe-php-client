@@ -23,7 +23,7 @@ $data = [];
 
 //$data = $client->courses()->find( 240, [ 'include' => 'plugin_data.field' ] );
 //$data = $client->categories()->all( [ 'include' => 'plugin_data.field' ] );
-$data = $client->planned_courses()->all( [ 'include' => 'course_variant,course_location.address' ] );
+$data = $client->courses()->all( [ 'include' => 'credit_definitions' ] );
 
 header( "Content-Type: application/json" );
 

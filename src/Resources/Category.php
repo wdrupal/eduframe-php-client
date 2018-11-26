@@ -21,7 +21,12 @@ class Category extends Resource {
 	protected $fillable = [
 		'id',
 		'name',
+		'slug',
 		'position',
+		'description',
+		'avatar',
+		'meta_title',
+		'meta_description',
 		'updated_at',
 		'created_at',
 		'plugin_data',

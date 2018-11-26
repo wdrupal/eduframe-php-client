@@ -41,6 +41,7 @@ class Course extends Resource {
 		'created_at',
 		'plugin_data',
 		'course_tab_contents',
+		'credit_definitions'
 	];
 
 	/**
@@ -70,12 +71,9 @@ class Course extends Resource {
 			'entity' => CourseTabContent::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
+		'credit_definitions' => [
+			'entity' => Definition::class,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
 	];
-
-	/**
-	 * @return Definition
-	 */
-	public function creditDefinitions() {
-		return new Definition( $this->connection, [ 'course_id' => $this->id ] );
-	}
 }
