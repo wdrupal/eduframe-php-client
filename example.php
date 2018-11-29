@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$educator_slug = 'drieam-test';
+$educator_slug = 'programme-builder';
 $access_token  = 'cd6395755d220afd2f11bdbe9d1b2dcf'; #staging program builder key
 
 $connection = new \Eduframe\Connection();
@@ -23,7 +23,8 @@ $data = [];
 
 //$data = $client->courses()->find( 240, [ 'include' => 'plugin_data.field' ] );
 //$data = $client->categories()->all( [ 'include' => 'plugin_data.field' ] );
-$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category' ] );
+$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents' ] );
+
 
 header( "Content-Type: application/json" );
 
