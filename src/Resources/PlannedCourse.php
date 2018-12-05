@@ -27,6 +27,7 @@ class PlannedCourse extends Resource {
 		'availability_state',
 		'cost_scheme',
 		'cost',
+		'currency',
 		'meetings',
 		'teachers',
 		'updated_at',

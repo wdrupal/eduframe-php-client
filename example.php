@@ -17,13 +17,13 @@ $data = [];
 //$data = $client->customer_enrollmensts()->all();
 //$data = $client->enrollments()->all();
 //$data = $client->courses()->find( 434, [ 'include' => 'plugin_data.field' ] );
-//$data = $client->planned_courses()->all(['include' => 'meetings,teachers']);
+$data = $client->planned_courses()->all(['include' => 'meetings,teachers']);
 //$data = $client->teachers()->all();
 //$data = $client->meetings()->all(['planned_course_id', ]);
 
 //$data = $client->courses()->find( 240, [ 'include' => 'plugin_data.field' ] );
 //$data = $client->categories()->all( [ 'include' => 'plugin_data.field' ] );
-$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents' ] );
+//$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents' ] );
 
 
 header( "Content-Type: application/json" );
