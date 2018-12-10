@@ -7,7 +7,6 @@ namespace Eduframe\Traits;
  * @package Eduframe\Traits
  */
 trait Removable {
-
 	use BaseTrait;
 
 	/**

@@ -7,20 +7,18 @@ namespace Eduframe\Traits;
  * @package Eduframe\Traits
  */
 trait FindOne {
-    use BaseTrait;
+	use BaseTrait;
 
-    /**
-     * @param string|int $id
-     *
-     * @param array $params
-     * @return mixed
-     *
-     * @throws \Eduframe\Exceptions\ApiException
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function find($id, $params = [])
-    {
-        $result = $this->connection()->get($this->getEndpoint() . '/' . urlencode($id), $params);
-        return $this->makeFromResponse($result);
-    }
+	/**
+	 * @param string|int $id
+	 * @param array $params
+	 * @return mixed
+	 * @throws \Eduframe\Exceptions\ApiException
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 */
+	public function find( $id, $params = [] ) {
+		$result = $this->connection()->get( $this->getEndpoint() . '/' . urlencode( $id ), $params );
+
+		return $this->makeFromResponse( $result );
+	}
 }

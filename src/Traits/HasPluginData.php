@@ -15,7 +15,8 @@ trait HasPluginData {
 	 * @return mixed
 	 */
 	public function get_plugin_data_value( $title ) {
-		$plugin_data = $this->get_plugin_data($title);
+		$plugin_data = $this->get_plugin_data( $title );
+
 		return $plugin_data ? $plugin_data->data : false;
 	}
 
@@ -43,7 +44,7 @@ trait HasPluginData {
 		if ( ! $plugin_data ) {
 			$plugin_data             = new Data( $this->connection );
 			$plugin_data->model_type = $this->model_name;
-			$plugin_data->model_id   = $this->attributes[$this->primaryKey];
+			$plugin_data->model_id   = $this->attributes[ $this->primaryKey ];
 			$plugin_data->title      = $title;
 		}
 		$plugin_data->data = $data;

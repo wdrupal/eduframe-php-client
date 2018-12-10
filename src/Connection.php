@@ -84,14 +84,8 @@ class Connection {
 
 	/**
 	 * @return Client
-	 * @throws ApiException
 	 */
 	public function connect() {
-		// If access token is not set or token has expired, acquire new token
-		if ( empty( $this->accessToken ) ) {
-			throw new ApiException( 'No access token set.' );
-		}
-
 		$client = $this->client();
 
 		return $client;
@@ -104,7 +98,6 @@ class Connection {
 	 * @param array $params
 	 * @param array $headers
 	 * @return \GuzzleHttp\Psr7\Request
-	 * @throws \Eduframe\Exceptions\ApiException
 	 */
 	private function createRequest( $method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [] ) {
 		// Add default json headers to the request
@@ -112,11 +105,6 @@ class Connection {
 			'Accept' => 'application/json',
 			// 'Content-type' => 'application/json'
 		] );
-
-		// If access token is not set or token has expired, acquire new token
-		if ( empty( $this->accessToken ) ) {
-			throw new ApiException( 'No access token set.' );
-		}
 
 		// If we have a token, sign the request
 		if ( ! empty( $this->accessToken ) ) {
