@@ -1,5 +1,5 @@
 {
-  "name": "luukvh/eduframe-php-client",
+  "name": "Drieam/eduframe-php-client",
   "type": "library",
   "description": "A PHP Client for the Eduframe V1 API",
   "keywords": [
@@ -7,7 +7,7 @@
     "php",
     "eduframe"
   ],
-  "homepage": "https://github.com/LuukvH/eduframe-php-client",
+  "homepage": "https://github.com/Drieam/eduframe-php-client",
   "license": "MIT",
   "authors": [
     {
