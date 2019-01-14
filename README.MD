@@ -1,5 +1,7 @@
 # eduframe-php-client
 
+[![CodeFactor](https://www.codefactor.io/repository/github/drieam/eduframe-php-client/badge)](https://www.codefactor.io/repository/github/drieam/eduframe-php-client)
+
 PHP Client for Eduframe V1
 
 ## Installation
@@ -13,7 +15,7 @@ composer ..
 To access the api you need at least the Educator slug.
 
 ### Access token
-Fetching published courses can be executed without an access token. 
+Fetching published courses can be executed without an access token.
 
 ```php
 <?php
@@ -23,7 +25,7 @@ require __DIR__ . '/vendor/autoload.php';
 $connection = new \Eduframe\Connection();
 $connection->setEducatorSlug( 'EDUCATOR' );
 ```
-However when accessing invoices or users an access token is required. 
+However when accessing invoices or users an access token is required.
 An access token can be obtained by requesting one via [Drieam support](mailto:support@drieam.com).
 
 ```
