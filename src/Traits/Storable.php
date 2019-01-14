@@ -49,5 +49,4 @@ trait Storable {
 
 		return $this->selfFromResponse( $result );
 	}
-
 }

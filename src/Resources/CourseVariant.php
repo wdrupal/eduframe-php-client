@@ -31,5 +31,4 @@ class CourseVariant extends Resource {
 	 * @var string
 	 */
 	protected $namespace = 'course_variant';
-	
 }
