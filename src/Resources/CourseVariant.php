@@ -4,6 +4,7 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 
+
 /**
  * @property integer id
  */
@@ -31,5 +32,4 @@ class CourseVariant extends Resource {
 	 * @var string
 	 */
 	protected $namespace = 'course_variant';
-	
 }
