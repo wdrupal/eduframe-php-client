@@ -4,6 +4,7 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 
+
 /**
  * @property integer id
  */
