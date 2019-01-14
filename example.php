@@ -15,18 +15,13 @@ $connection->setTesting( true );
 $client = new Eduframe\Client( $connection );
 
 $data = [];
-$data = $client->courses()->all( [ 'include' => 'plugin_data' ] );
-$data = $client->customers()->all( [ 'include' => 'address' ] );
-$data = $client->customer_enrollmensts()->all();
-$data = $client->enrollments()->all();
-$data = $client->courses()->find( 434, [ 'include' => 'plugin_data.field' ] );
-$data = $client->planned_courses()->all( [ 'include' => 'meetings' ] );
-$data = $client->teachers()->all();
-$data = $client->meetings()->all( [ 'planned_course_id' ] );
 
-$data = $client->courses()->find( 240, [ 'include' => 'plugin_data.field' ] );
-$data = $client->categories()->all( [ 'include' => 'plugin_data.field' ] );
+$data = $client->categories()->all();
+$data = $client->courses()->all();
+
+// With include its possible to include nested relations.
 $data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents' ] );
+$data = $client->planned_courses()->all( [ 'include' => 'meetings' ] );
 
 header( "Content-Type: application/json" );
 

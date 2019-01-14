@@ -37,7 +37,7 @@ class PlannedCourse extends Resource {
 		'course_location',
 		'available_places',
 		'max_participants',
-		'requested_and_active_and_completed_enrollments_count'
+		'current_participants'
 	];
 
 	/**
