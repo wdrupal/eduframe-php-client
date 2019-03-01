@@ -20,8 +20,6 @@ class Label extends Resource {
     protected $fillable = [
         'id',
         'name',
-        'updated_at',
-        'created_at',
         'color',
         'model_type'
     ];
