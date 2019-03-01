@@ -12,7 +12,6 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-
 class Label extends Resource {
 
     use FindAll, FindOne;
@@ -23,7 +22,6 @@ class Label extends Resource {
         'color',
         'model_type'
     ];
-
 
     /**
      * @var string
@@ -38,6 +36,5 @@ class Label extends Resource {
     /**
      * @var string
      */
-    protected $namespace = 'course';
-
+    protected $namespace = 'label';
 }
