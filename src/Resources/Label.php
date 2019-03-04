@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 363690
- * Date: 27/02/2019
- * Time: 14:32
- */
 
 namespace Eduframe\Resources;
 
