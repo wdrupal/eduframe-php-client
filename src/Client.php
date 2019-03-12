@@ -90,7 +90,6 @@ class Client {
         return new Label( $this->connection, $attributes );
     }
 
-
     /**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\Meeting
