@@ -8,6 +8,7 @@ use Eduframe\Resources\Category;
 use Eduframe\Resources\Customer;
 use Eduframe\Resources\CustomerEnrollment;
 use Eduframe\Resources\Enrollment;
+use Eduframe\Resources\Label;
 use Eduframe\Resources\Meeting;
 use Eduframe\Resources\PlannedCourse;
 use Eduframe\Resources\Teacher;
@@ -81,7 +82,15 @@ class Client {
 		return new Enrollment( $this->connection, $attributes );
 	}
 
-	/**
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\Label
+     */
+    public function labels( $attributes = [] ) {
+        return new Label( $this->connection, $attributes );
+    }
+
+    /**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\Meeting
 	 */

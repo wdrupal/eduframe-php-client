@@ -7,7 +7,7 @@ $access_token  = 'cd6395755d220afd2f11bdbe9d1b2dcf'; # testing program builder k
 
 $connection = new \Eduframe\Connection();
 
-//$connection->setAccessToken( $access_token );
+$connection->setAccessToken( $access_token );
 $connection->setEducatorSlug( $educator_slug );
 $connection->setTesting( true );
 
@@ -18,10 +18,12 @@ $data = [];
 
 $data = $client->categories()->all();
 $data = $client->courses()->all();
+$data = $client->labels()->all();
 
 // With include its possible to include nested relations.
 $data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents' ] );
 $data = $client->planned_courses()->all( [ 'include' => 'meetings' ] );
+$data = $client->labels()->all();
 
 header( "Content-Type: application/json" );
 
