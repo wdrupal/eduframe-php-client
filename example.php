@@ -21,9 +21,9 @@ $data = $client->courses()->all();
 $data = $client->labels()->all();
 
 // With include its possible to include nested relations.
-$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents' ] );
 $data = $client->planned_courses()->all( [ 'include' => 'meetings' ] );
 $data = $client->labels()->all();
+$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents,labels' ] );
 
 header( "Content-Type: application/json" );
 

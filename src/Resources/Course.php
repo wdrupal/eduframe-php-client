@@ -41,7 +41,8 @@ class Course extends Resource {
 		'created_at',
 		'plugin_data',
 		'course_tab_contents',
-		'credit_definitions'
+		'credit_definitions',
+		'labels'
 	];
 
 	/**
@@ -73,6 +74,10 @@ class Course extends Resource {
 		],
 		'credit_definitions' => [
 			'entity' => Definition::class,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
+		'labels' => [
+			'entity' => Label::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
 	];
