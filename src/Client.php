@@ -13,6 +13,7 @@ use Eduframe\Resources\Meeting;
 use Eduframe\Resources\PlannedCourse;
 use Eduframe\Resources\Teacher;
 use Eduframe\Resources\Plugins\Data;
+use Eduframe\Resources\User;
 
 
 /**
@@ -112,6 +113,14 @@ class Client {
 	 */
 	public function teachers( $attributes = [] ) {
 		return new Teacher( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\User
+	 */
+	public function users( $attributes = [] ) {
+		return new User( $this->connection, $attributes );
 	}
 
 	/**

@@ -19,6 +19,7 @@ $data = [];
 $data = $client->categories()->all();
 $data = $client->courses()->all();
 $data = $client->labels()->all();
+$data = $client->users()->all();
 
 // With include its possible to include nested relations.
 $data = $client->planned_courses()->all( [ 'include' => 'meetings' ] );
