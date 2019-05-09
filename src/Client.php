@@ -115,7 +115,6 @@ class Client {
 		return new Teacher( $this->connection, $attributes );
 	}
 
-
 	/**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\User

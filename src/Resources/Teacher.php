@@ -25,21 +25,26 @@ class Teacher extends Resource {
 		'created_at',
 		'plugin_data'
 	];
+
 	/**
 	 * @var string
 	 */
+
 	protected $model_name = 'User';
 	/**
 	 * @var string
 	 */
+
 	protected $endpoint = 'teachers';
 	/**
 	 * @var string
 	 */
+
 	protected $namespace = 'teacher';
 	/**
 	 * @var array
 	 */
+
 	protected $multipleNestedEntities = [
 		'plugin_data' => [
 			'entity' => Data::class,
