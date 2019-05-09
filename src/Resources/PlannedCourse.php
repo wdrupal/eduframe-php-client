@@ -29,6 +29,7 @@ class PlannedCourse extends Resource {
 		'cost',
 		'currency',
 		'meetings',
+		'teachers',
 		'updated_at',
 		'created_at',
 		'plugin_data',
@@ -60,6 +61,10 @@ class PlannedCourse extends Resource {
 	protected $multipleNestedEntities = [
 		'meetings'    => [
 			'entity' => Meeting::class,
+			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
+		],
+		'teachers'    => [
+			'entity' => Teacher::class,
 			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
 		],
 		'plugin_data' => [

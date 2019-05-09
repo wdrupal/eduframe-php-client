@@ -12,6 +12,7 @@ use Eduframe\Resources\Label;
 use Eduframe\Resources\Meeting;
 use Eduframe\Resources\PlannedCourse;
 use Eduframe\Resources\Plugins\Data;
+use Eduframe\Resources\Teacher;
 use Eduframe\Resources\User;
 
 
@@ -105,6 +106,15 @@ class Client {
 	public function planned_courses( $attributes = [] ) {
 		return new PlannedCourse( $this->connection, $attributes );
 	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Teacher
+	 */
+	public function teachers( $attributes = [] ) {
+		return new Teacher( $this->connection, $attributes );
+	}
+
 
 	/**
 	 * @param array $attributes
