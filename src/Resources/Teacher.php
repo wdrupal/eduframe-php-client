@@ -18,6 +18,7 @@ class Teacher extends Resource {
 		'middle_name',
 		'last_name',
 		'teacher_description',
+		'teacher_headline',
 		'avatar_url',
 		'slug',
 		'updated_at',
