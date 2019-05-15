@@ -18,7 +18,9 @@ class User extends Resource{
 		'email',
 		'phone',
 		'address',
-		'roles'
+		'roles',
+		'updated_at',
+		'created_at'
 	];
 
 	/**
