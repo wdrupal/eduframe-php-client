@@ -18,8 +18,8 @@ $data = [];
 
 //$data = $client->categories()->all();
 //$data = $client->courses()->all();
-$data = $client->teachers()->all();
-//$data = $client->users()->all();
+//$data = $client->teachers()->all();
+$data = $client->users()->all([ 'include' => 'address' ]);
 
 
 // With include its possible to include nested relations.
