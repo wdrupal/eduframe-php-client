@@ -39,10 +39,7 @@ class User extends Resource{
 	/**
 	 * @var array
 	 */
-	protected $multipleNestedEntities = [
-		'address' => [
-			'entity' => Address::class,
-			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
+	protected $singleNestedEntities = [
+		'address' => Address::class,
 	];
 }
