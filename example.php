@@ -18,7 +18,8 @@ $data = [];
 
 //$data = $client->categories()->all();
 //$data = $client->courses()->all();
-$data = $client->teachers()->all();
+//$data = $client->teachers()->all();
+$data = $client->enrollments()->all( [ 'include' => 'course']);
 
 // With include its possible to include nested relations.
 //$data = $client->planned_courses()->all( [ 'include' => 'meetings' ] );

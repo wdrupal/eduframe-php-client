@@ -21,7 +21,8 @@ class Enrollment extends Resource {
 		'comments',
 		'graduation_state',
 		'created_at',
-		'updated_at'
+		'updated_at',
+		'course'
 	];
 
 	/**
@@ -33,4 +34,11 @@ class Enrollment extends Resource {
 	 * @var string
 	 */
 	protected $namespace = 'enrollment';
+
+	/**
+	 * @var array
+	 */
+	protected $singleNestedEntities = [
+		'course'  => Course::class,
+	];
 }
