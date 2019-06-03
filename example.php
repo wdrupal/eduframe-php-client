@@ -22,7 +22,7 @@ $data = [];
 $data = $client->enrollments()->all( [ 'include' => 'course']);
 
 // With include its possible to include nested relations.
-$data = $client->users()->all( [ 'include' => 'address' ] );
+$data = $client->course_locations()->all();
 //$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents,labels' ] );
 
 header( "Content-Type: application/json" );
