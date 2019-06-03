@@ -5,7 +5,7 @@ namespace Eduframe;
 use Eduframe\Resources\Address;
 use Eduframe\Resources\Course;
 use Eduframe\Resources\Category;
-use Eduframe\Resources\CourseLocation;
+use Eduframe\Resources\Location;
 use Eduframe\Resources\Customer;
 use Eduframe\Resources\CustomerEnrollment;
 use Eduframe\Resources\Enrollment;
@@ -62,10 +62,11 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\CourseLocation
+	 *
+	 * @return \Eduframe\Resources\Location
 	 */
-	public function course_locations( $attributes = [] ) {
-		return new CourseLocation( $this->connection, $attributes );
+	public function locations( $attributes = [] ) {
+		return new Location( $this->connection, $attributes );
 	}
 
 	/**
