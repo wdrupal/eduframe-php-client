@@ -9,7 +9,7 @@ use Eduframe\Traits\FindOne;
 /**
  * @property integer id
  */
-class CourseLocation extends Resource {
+class Location extends Resource {
 
 	use FindAll, FindOne;
 	/**
@@ -24,7 +24,7 @@ class CourseLocation extends Resource {
 	/**
 	 * @var string
 	 */
-	protected $model_name = 'CourseLocation';
+	protected $model_name = 'Location';
 
 	/**
 	 * @var string
@@ -34,7 +34,7 @@ class CourseLocation extends Resource {
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'course_location';
+	protected $namespace = 'location';
 
 	/**
 	 * @var array
