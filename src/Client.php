@@ -65,7 +65,7 @@ class Client {
 	 *
 	 * @return \Eduframe\Resources\Location
 	 */
-	public function locations( $attributes = [] ) {
+	public function course_locations( $attributes = [] ) {
 		return new Location( $this->connection, $attributes );
 	}
 

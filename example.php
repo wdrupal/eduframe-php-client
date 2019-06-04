@@ -18,11 +18,11 @@ $data = [];
 
 //$data = $client->categories()->all();
 //$data = $client->courses()->all();
-$data = $client->planned_courses()->all( ['include' => 'course_location' ] );
+// $data = $client->planned_courses()->all( ['include' => 'course_location' ] );
 //$data = $client->enrollments()->all( [ 'include' => 'course']);
 
 // With include its possible to include nested relations.
-//$data = $client->locations()->all();
+$data = $client->course_locations()->all();
 //$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents,labels' ] );
 
 header( "Content-Type: application/json" );
