@@ -17,7 +17,10 @@ class User extends Resource{
 		'last_name',
 		'email',
 		'phone',
-		'roles'
+		'address',
+		'roles',
+		'updated_at',
+		'created_at'
 	];
 
 	/**
@@ -34,4 +37,11 @@ class User extends Resource{
 	 * @var string
 	 */
 	protected $namespace = 'user';
+
+	/**
+	 * @var array
+	 */
+	protected $singleNestedEntities = [
+		'address' => Address::class,
+	];
 }

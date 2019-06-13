@@ -3,12 +3,15 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
+use Eduframe\Traits\FindAll;
+use Eduframe\Traits\FindOne;
 
 /**
  * @property integer id
  */
-class CourseLocation extends Resource {
+class Location extends Resource {
 
+	use FindAll, FindOne;
 	/**
 	 * @var array
 	 */
@@ -21,17 +24,17 @@ class CourseLocation extends Resource {
 	/**
 	 * @var string
 	 */
-	protected $model_name = 'CourseLocation';
+	protected $model_name = 'Location';
 
 	/**
 	 * @var string
 	 */
-	protected $endpoint = 'course_location';
+	protected $endpoint = 'course_locations';
 
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'course_location';
+	protected $namespace = 'location';
 
 	/**
 	 * @var array
