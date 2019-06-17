@@ -15,7 +15,9 @@ use Eduframe\Resources\PlannedCourse;
 use Eduframe\Resources\Plugins\Data;
 use Eduframe\Resources\Teacher;
 use Eduframe\Resources\User;
-
+use Eduframe\Resources\PaymentMethod;
+use Eduframe\Resources\PaymentOption;
+use Eduframe\Resources\SignupQuestion;
 
 /**
  * Class Eduframe
@@ -139,6 +141,30 @@ class Client {
 	 */
 	public function plugin_data( $attributes = [] ) {
 		return new Data( $this->connection, $attributes );
+	}
+
+    /**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\PaymentMethod
+	 */
+	public function payment_methods( $attributes = [] ) {
+		return new PaymentMethod( $this->connection, $attributes );
+    }
+    
+    /**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\PaymentOption
+	 */
+	public function payment_options( $attributes = [] ) {
+		return new PaymentOption( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\PaytmenOption
+	 */
+	public function signup_questions( $attributes = [] ) {
+		return new SignupQuestion( $this->connection, $attributes );
 	}
 
 	/**
