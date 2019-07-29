@@ -27,6 +27,9 @@ $data['payment_options'] = $client->payment_options()->all();
 $data['signup_questions'] = $client->signup_questions()->all();
 //$data = $client->courses()->all( [ 'include' => 'credit_definitions.type.category,course_tab_contents,labels' ] );
 
+// Getting referals
+$data['referals'] = $client->referrals()->all();
+
 header( "Content-Type: application/json" );
 
 echo json_encode( $data );
