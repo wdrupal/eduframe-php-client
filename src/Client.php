@@ -18,6 +18,7 @@ use Eduframe\Resources\User;
 use Eduframe\Resources\PaymentMethod;
 use Eduframe\Resources\PaymentOption;
 use Eduframe\Resources\SignupQuestion;
+use Eduframe\Resources\Referral;
 
 /**
  * Class Eduframe
@@ -165,6 +166,14 @@ class Client {
 	 */
 	public function signup_questions( $attributes = [] ) {
 		return new SignupQuestion( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Referral
+	 */
+	public function referrals( $attributes = [] ) {
+		return new Referral( $this->connection, $attributes );
 	}
 
 	/**
