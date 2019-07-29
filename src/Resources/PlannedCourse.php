@@ -3,14 +3,12 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
-use Eduframe\Resources\Plugins\Data;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
-use Eduframe\Traits\HasPluginData;
 
 class PlannedCourse extends Resource {
 
-	use FindAll, FindOne, HasPluginData;
+	use FindAll, FindOne;
 
 	/**
 	 * @var array
@@ -32,7 +30,6 @@ class PlannedCourse extends Resource {
 		'teachers',
 		'updated_at',
 		'created_at',
-		'plugin_data',
 		'course_variant',
 		'course_location',
 		'available_places',
@@ -66,10 +63,6 @@ class PlannedCourse extends Resource {
 		'teachers'    => [
 			'entity' => Teacher::class,
 			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
-		],
-		'plugin_data' => [
-			'entity' => Data::class,
-			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		]
 	];
 

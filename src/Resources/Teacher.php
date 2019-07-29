@@ -2,13 +2,11 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
-use Eduframe\Resources\Plugins\Data;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
-use Eduframe\Traits\HasPluginData;
 
 class Teacher extends Resource {
-	use FindAll, FindOne, HasPluginData;
+	use FindAll, FindOne;
 	/**
 	 * @var array
 	 */
@@ -22,8 +20,7 @@ class Teacher extends Resource {
 		'avatar_url',
 		'slug',
 		'updated_at',
-		'created_at',
-		'plugin_data'
+		'created_at'
 	];
 
 	/**
@@ -41,14 +38,4 @@ class Teacher extends Resource {
 	 */
 
 	protected $namespace = 'teacher';
-	/**
-	 * @var array
-	 */
-
-	protected $multipleNestedEntities = [
-		'plugin_data' => [
-			'entity' => Data::class,
-			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
-	];
 }
