@@ -4,17 +4,15 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 use Eduframe\Resources\Credits\Definition;
-use Eduframe\Resources\Plugins\Data;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
-use Eduframe\Traits\HasPluginData;
 
 /**
  * @property integer id
  */
 class Course extends Resource {
 
-	use FindAll, FindOne, HasPluginData;
+	use FindAll, FindOne;
 
 	/**
 	 * @var array
@@ -39,7 +37,6 @@ class Course extends Resource {
 		'result',
 		'updated_at',
 		'created_at',
-		'plugin_data',
 		'course_tab_contents',
 		'credit_definitions',
 		'labels'
@@ -64,10 +61,6 @@ class Course extends Resource {
 	 * @var array
 	 */
 	protected $multipleNestedEntities = [
-		'plugin_data' => [
-			'entity' => Data::class,
-			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
 		'course_tab_contents' => [
 			'entity' => CourseTabContent::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,

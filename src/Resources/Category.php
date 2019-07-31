@@ -3,17 +3,15 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
-use Eduframe\Resources\Plugins\Data;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
-use Eduframe\Traits\HasPluginData;
 
 /**
  * @property integer id
  */
 class Category extends Resource {
 
-	use FindAll, FindOne, HasPluginData;
+	use FindAll, FindOne;
 
 	/**
 	 * @var array
@@ -28,8 +26,7 @@ class Category extends Resource {
 		'meta_title',
 		'meta_description',
 		'updated_at',
-		'created_at',
-		'plugin_data',
+		'created_at'
 	];
 
 	/**
@@ -46,14 +43,4 @@ class Category extends Resource {
 	 * @var string
 	 */
 	protected $namespace = 'category';
-
-	/**
-	 * @var array
-	 */
-	protected $multipleNestedEntities = [
-		'plugin_data' => [
-			'entity' => Data::class,
-			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
-	];
 }

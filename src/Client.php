@@ -12,7 +12,6 @@ use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Meeting;
 use Eduframe\Resources\PlannedCourse;
-use Eduframe\Resources\Plugins\Data;
 use Eduframe\Resources\Teacher;
 use Eduframe\Resources\User;
 use Eduframe\Resources\PaymentMethod;
@@ -134,14 +133,6 @@ class Client {
 	 */
 	public function users( $attributes = [] ) {
 		return new User( $this->connection, $attributes );
-	}
-
-	/**
-	 * @param array $attributes
-	 * @return \Eduframe\Resources\Plugins\Data
-	 */
-	public function plugin_data( $attributes = [] ) {
-		return new Data( $this->connection, $attributes );
 	}
 
     /**
