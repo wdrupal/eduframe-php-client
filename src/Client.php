@@ -153,7 +153,7 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\PaymentOption
+	 * @return \Eduframe\Resources\SignupQuestion
 	 */
 	public function signup_questions( $attributes = [] ) {
 		return new SignupQuestion( $this->connection, $attributes );
