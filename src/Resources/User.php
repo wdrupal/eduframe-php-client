@@ -19,6 +19,7 @@ class User extends Resource{
 		'phone',
 		'address',
 		'roles',
+		'signup_answers',
 		'updated_at',
 		'created_at'
 	];
@@ -43,5 +44,15 @@ class User extends Resource{
 	 */
 	protected $singleNestedEntities = [
 		'address' => Address::class,
+	];
+
+	/**
+	 * @var array
+	 */
+	protected $multipleNestedEntities = [
+		'signup_answers' => [
+			'entity' => SignupAnswer::class,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
 	];
 }
