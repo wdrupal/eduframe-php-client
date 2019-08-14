@@ -15,6 +15,7 @@ class Meeting extends Resource {
 	protected $fillable = [
 		'id',
 		'planned_course_id',
+		'name',
 		'description',
 		'description_dashboard',
 		'meeting_location_id',
