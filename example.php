@@ -22,7 +22,7 @@ $data = [];
 //$data = $client->enrollments()->all( [ 'include' => 'course']);
 
 // With include its possible to include nested relations.
-$data['users'] = $client->users()->all(['include' => 'address,signup_answers']);
+$data['users'] = $client->users()->all(['include' => 'address,invoice_address,signup_answers']);
 $data['payment_methods'] = $client->payment_methods()->all();
 $data['payment_options'] = $client->payment_options()->all();
 $data['signup_questions'] = $client->signup_questions()->all();

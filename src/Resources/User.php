@@ -19,6 +19,7 @@ class User extends Resource{
 		'company_name',
 		'phone',
 		'address',
+		'invoice_address',
 		'roles',
 		'signup_answers',
 		'updated_at',
@@ -45,6 +46,7 @@ class User extends Resource{
 	 */
 	protected $singleNestedEntities = [
 		'address' => Address::class,
+		'invoice_address' => Address::class,
 	];
 
 	/**
