@@ -16,6 +16,7 @@ class User extends Resource{
 		'middle_name',
 		'last_name',
 		'email',
+		'company_name',
 		'phone',
 		'address',
 		'roles',
