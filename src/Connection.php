@@ -349,7 +349,7 @@ class Connection {
 	 */
 	private function formatUrl( $url, $method = 'get' ) {
 		if ( $this->testing ) {
-			return 'http://' . $this->educator_slug . '.testing.edufra.me/api/v1' . '/' . $url;
+			return 'https://' . $this->educator_slug . '.edufra.me/api/v1' . '/' . $url;
 		}
 
 		return str_replace( '{educator_slug}', $this->educator_slug, $this->apiUrl ) . '/' . $url;

@@ -11,6 +11,10 @@ class Address extends Resource {
 	 */
 	protected $fillable = [
 		'id',
+		'addressee_first_name',
+		'addressee_middle_name',
+		'addressee_last_name',
+		'email',
 		'address',
 		'postal_code',
 		'city',

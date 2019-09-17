@@ -53,7 +53,7 @@ $client = new Eduframe\Client( $connection );
 $courses = $client->courses()->all();
 
 // Example: Get courses with includes in this case the course tabs
-$courses_with_tabs = $client->courses()->all(['include' => 'course_tab_contents: :course_tab']);
+$courses_with_tabs = $client->courses()->all(['include' => 'course_tab_contents.course_tab']);
 
 // Example: Fetch list of planned courses with meetings
 $planned_courses = $client->planned_courses()->all(['include' => 'meetings']);

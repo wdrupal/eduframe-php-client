@@ -12,10 +12,12 @@ use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Meeting;
 use Eduframe\Resources\PlannedCourse;
-use Eduframe\Resources\Plugins\Data;
 use Eduframe\Resources\Teacher;
 use Eduframe\Resources\User;
-
+use Eduframe\Resources\PaymentMethod;
+use Eduframe\Resources\PaymentOption;
+use Eduframe\Resources\SignupQuestion;
+use Eduframe\Resources\Referral;
 
 /**
  * Class Eduframe
@@ -133,12 +135,36 @@ class Client {
 		return new User( $this->connection, $attributes );
 	}
 
+    /**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\PaymentMethod
+	 */
+	public function payment_methods( $attributes = [] ) {
+		return new PaymentMethod( $this->connection, $attributes );
+    }
+    
+    /**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\PaymentOption
+	 */
+	public function payment_options( $attributes = [] ) {
+		return new PaymentOption( $this->connection, $attributes );
+	}
+
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\Plugins\Data
+	 * @return \Eduframe\Resources\SignupQuestion
 	 */
-	public function plugin_data( $attributes = [] ) {
-		return new Data( $this->connection, $attributes );
+	public function signup_questions( $attributes = [] ) {
+		return new SignupQuestion( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Referral
+	 */
+	public function referrals( $attributes = [] ) {
+		return new Referral( $this->connection, $attributes );
 	}
 
 	/**
