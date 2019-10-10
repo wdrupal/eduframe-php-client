@@ -11,6 +11,10 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Eduframe\Exceptions\ApiException;
 
+const PRODUCTION = 1;
+const TESTING = 2;
+const STAGING = 3;
+
 /**
  * Class Connection
  * @package Eduframe
@@ -44,7 +48,7 @@ class Connection {
 	/**
 	 * @var bool
 	 */
-	private $testing = false;
+	private $stage = PRODUCTION;
 
 	/**
 	 * @return Client
@@ -64,10 +68,6 @@ class Connection {
 			'handler'     => $handlerStack,
 			'expect'      => false,
 		];
-
-		if ( $this->isTesting() ) {
-			$args['verify'] = false;
-		}
 
 		$this->client = new Client( $args );
 
@@ -348,24 +348,36 @@ class Connection {
 	 * @return string
 	 */
 	private function formatUrl( $url, $method = 'get' ) {
-		if ( $this->testing ) {
+		if ( $this->stage == TESTING ) {
+			return 'https://' . $this->educator_slug . '.testing.eduframe.dev/api/v1' . '/' . $url;
+		} else if ( $this->stage == STAGING ) {
 			return 'https://' . $this->educator_slug . '.edufra.me/api/v1' . '/' . $url;
 		}
 
 		return str_replace( '{educator_slug}', $this->educator_slug, $this->apiUrl ) . '/' . $url;
 	}
 
-	/**
-	 * @return bool
+		/**
+	 * @param bool $testing
 	 */
-	public function isTesting() {
-		return $this->testing;
+	public function setTesting($testing) {
+		if ($testing) {
+			$this->stage == TESTING;
+		}
+		$this->stage == PRODUCTION;
 	}
 
 	/**
-	 * @param bool $testing
+	 * @return bool
 	 */
-	public function setTesting( $testing ) {
-		$this->testing = $testing;
+	public function getStage( $stage ) {
+		return $this->stage;
+	}
+
+	/**
+	 * @param int $stage
+	 */
+	public function setStage( $stage ) {
+		$this->stage = $stage;
 	}
 }
