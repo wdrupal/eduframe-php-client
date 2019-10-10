@@ -362,16 +362,16 @@ class Connection {
 	 */
 	public function setTesting($testing) {
 		if ($testing) {
-			$this->stage == TESTING;
+			$this->stage = TESTING;
 		} else {
-			$this->stage == PRODUCTION;
+			$this->stage = PRODUCTION;
 		}
 	}
 
 	/**
 	 * @return bool
 	 */
-	public function getStage( $stage ) {
+	public function getStage( ) {
 		return $this->stage;
 	}
 
