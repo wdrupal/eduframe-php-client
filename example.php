@@ -2,15 +2,14 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$educator_slug = 'programme-builder.testing';
+$educator_slug = 'programme-builder';
 $access_token  = 'cd6395755d220afd2f11bdbe9d1b2dcf'; # testing program builder key
 
-$connection = new \Eduframe\Connection();
+$connection = new Eduframe\Connection();
 
 $connection->setAccessToken( $access_token );
 $connection->setEducatorSlug( $educator_slug );
-$connection->setTesting( true );
-
+$connection->setStage( Eduframe\TESTING );
 
 $client = new Eduframe\Client( $connection );
 
