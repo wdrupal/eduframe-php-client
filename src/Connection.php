@@ -363,8 +363,9 @@ class Connection {
 	public function setTesting($testing) {
 		if ($testing) {
 			$this->stage == TESTING;
+		} else {
+			$this->stage == PRODUCTION;
 		}
-		$this->stage == PRODUCTION;
 	}
 
 	/**
