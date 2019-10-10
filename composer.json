@@ -1,5 +1,5 @@
 {
-  "name": "Drieam/eduframe-php-client",
+  "name": "drieam/eduframe-php-client",
   "type": "library",
   "description": "A PHP Client for the Eduframe V1 API",
   "keywords": [
