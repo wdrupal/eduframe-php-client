@@ -14,7 +14,9 @@ class Label extends Resource {
         'id',
         'name',
         'color',
-        'model_type'
+        'model_type',
+        'updated_at',
+        'created_at'
     ];
 
     /**
