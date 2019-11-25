@@ -4,6 +4,7 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
+use Eduframe\Traits\FindOne;
 
 class Meeting extends Resource {
 
