@@ -7,7 +7,7 @@ use Eduframe\Traits\FindAll;
 
 class Meeting extends Resource {
 
-	use FindAll;
+	use FindAll, FindOne;
 
 	/**
 	 * @var array
