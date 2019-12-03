@@ -6,6 +6,7 @@ use Eduframe\Resources\Address;
 use Eduframe\Resources\Course;
 use Eduframe\Resources\Category;
 use Eduframe\Resources\Location;
+use Eduframe\Resources\Variant;
 use Eduframe\Resources\Customer;
 use Eduframe\Resources\CustomerEnrollment;
 use Eduframe\Resources\Enrollment;
@@ -69,6 +70,15 @@ class Client {
 	 */
 	public function course_locations( $attributes = [] ) {
 		return new Location( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 *
+	 * @return \Eduframe\Resources\Variant
+	 */
+	public function course_variants( $attributes = [] ) {
+		return new Variant( $this->connection, $attributes );
 	}
 
 	/**

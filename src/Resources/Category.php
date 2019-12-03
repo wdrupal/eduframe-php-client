@@ -25,6 +25,7 @@ class Category extends Resource {
 		'avatar',
 		'meta_title',
 		'meta_description',
+		'is_published',
 		'updated_at',
 		'created_at'
 	];

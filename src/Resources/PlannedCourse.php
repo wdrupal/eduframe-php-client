@@ -15,26 +15,27 @@ class PlannedCourse extends Resource {
 	 */
 	protected $fillable = [
 		'id',
-		'type',
 		'course_id',
+		'course_location_id',
+		'course_variant_id',
+		'type',
 		'start_date',
 		'end_date',
 		'status',
-		'duration_in_days',
-		'duration_in_hours',
 		'availability_state',
 		'cost_scheme',
 		'cost',
 		'currency',
 		'meetings',
 		'teachers',
-		'updated_at',
-		'created_at',
 		'course_variant',
 		'course_location',
 		'available_places',
 		'max_participants',
-		'current_participants'
+		'current_participants',
+		'is_published',
+		'updated_at',
+		'created_at'
 	];
 
 	/**

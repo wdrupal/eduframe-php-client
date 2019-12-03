@@ -18,7 +18,9 @@ class Location extends Resource {
 	protected $fillable = [
 		'id',
 		'name',
-		'address'
+		'address',
+		'updated_at',
+		'created_at'
 	];
 
 	/**

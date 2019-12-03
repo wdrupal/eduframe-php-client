@@ -19,6 +19,7 @@ class Course extends Resource {
 	 */
 	protected $fillable = [
 		'id',
+		'category_id',
 		'slug',
 		'name',
 		'position',
@@ -32,14 +33,14 @@ class Course extends Resource {
 		'avatar_url',
 		'avatar_thumb_url',
 		'avatar',
-		'category_id',
 		'level',
 		'result',
-		'updated_at',
-		'created_at',
 		'course_tab_contents',
 		'credit_definitions',
-		'labels'
+		'labels',
+		'is_published',
+		'updated_at',
+		'created_at'
 	];
 
 	/**
