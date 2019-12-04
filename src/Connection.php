@@ -11,9 +11,9 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Eduframe\Exceptions\ApiException;
 
-const PRODUCTION = 1;
-const TESTING = 2;
-const STAGING = 3;
+const PRODUCTION = 'production';
+const TESTING = 'testing';
+const STAGING = 'staging';
 
 /**
  * Class Connection
