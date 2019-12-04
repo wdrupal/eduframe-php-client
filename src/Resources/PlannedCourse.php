@@ -71,7 +71,7 @@ class PlannedCourse extends Resource {
 	 * @var array
 	 */
 	protected $singleNestedEntities = [
-		'course_variant'  => CourseVariant::class,
+		'course_variant'  => Variant::class,
 		'course_location' => Location::class,
 	];
 }
