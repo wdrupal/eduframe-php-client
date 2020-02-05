@@ -4,21 +4,20 @@ namespace Eduframe;
 
 use Eduframe\Resources\Account;
 use Eduframe\Resources\Address;
-use Eduframe\Resources\Course;
 use Eduframe\Resources\Category;
-use Eduframe\Resources\Location;
-use Eduframe\Resources\Variant;
-use Eduframe\Resources\Order;
+use Eduframe\Resources\Course;
 use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
+use Eduframe\Resources\Location;
 use Eduframe\Resources\Meeting;
-use Eduframe\Resources\PlannedCourse;
-use Eduframe\Resources\Teacher;
-use Eduframe\Resources\User;
+use Eduframe\Resources\Variant;
+use Eduframe\Resources\Order;
 use Eduframe\Resources\PaymentMethod;
 use Eduframe\Resources\PaymentOption;
-use Eduframe\Resources\SignupQuestion;
+use Eduframe\Resources\PlannedCourse;
 use Eduframe\Resources\Referral;
+use Eduframe\Resources\SignupQuestion;
+use Eduframe\Resources\User;
 
 /**
  * Class Eduframe
@@ -91,29 +90,21 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\CustomerEnrollment
-	 */
-	public function orders( $attributes = [] ) {
-		return new Order( $this->connection, $attributes );
-	}
-
-	/**
-	 * @param array $attributes
 	 * @return \Eduframe\Resources\Enrollment
 	 */
 	public function enrollments( $attributes = [] ) {
 		return new Enrollment( $this->connection, $attributes );
 	}
 
-    /**
+	/**
      * @param array $attributes
      * @return \Eduframe\Resources\Label
      */
     public function labels( $attributes = [] ) {
         return new Label( $this->connection, $attributes );
-    }
-
-    /**
+	}
+	
+	/**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\Meeting
 	 */
@@ -123,21 +114,13 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\PlannedCourse
+	 * @return \Eduframe\Resources\Order
 	 */
-	public function planned_courses( $attributes = [] ) {
-		return new PlannedCourse( $this->connection, $attributes );
+	public function orders( $attributes = [] ) {
+		return new Order( $this->connection, $attributes );
 	}
 
 	/**
-	 * @param array $attributes
-	 * @return \Eduframe\Resources\User
-	 */
-	public function users( $attributes = [] ) {
-		return new User( $this->connection, $attributes );
-	}
-
-    /**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\PaymentMethod
 	 */
@@ -155,10 +138,10 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\SignupQuestion
+	 * @return \Eduframe\Resources\PlannedCourse
 	 */
-	public function signup_questions( $attributes = [] ) {
-		return new SignupQuestion( $this->connection, $attributes );
+	public function planned_courses( $attributes = [] ) {
+		return new PlannedCourse( $this->connection, $attributes );
 	}
 
 	/**
@@ -167,6 +150,22 @@ class Client {
 	 */
 	public function referrals( $attributes = [] ) {
 		return new Referral( $this->connection, $attributes );
+	}    
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\SignupQuestion
+	 */
+	public function signup_questions( $attributes = [] ) {
+		return new SignupQuestion( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\User
+	 */
+	public function users( $attributes = [] ) {
+		return new User( $this->connection, $attributes );
 	}
 
 	/**
