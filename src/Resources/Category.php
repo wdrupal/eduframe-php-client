@@ -6,11 +6,7 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-/**
- * @property integer id
- */
 class Category extends Resource {
-
 	use FindAll, FindOne;
 
 	/**

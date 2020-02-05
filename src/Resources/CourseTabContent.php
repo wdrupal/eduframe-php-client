@@ -4,9 +4,6 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 
-/**
- * @property integer id
- */
 class CourseTabContent extends Resource {
 
 	/**
@@ -14,7 +11,7 @@ class CourseTabContent extends Resource {
 	 */
 	protected $fillable = [
 		'content',
-		'course_tab',
+		'course_tab'
 	];
 
 	/**

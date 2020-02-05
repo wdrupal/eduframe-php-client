@@ -4,15 +4,15 @@ namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 
-class SignupAnswer extends Resource
-{
+class SignupAnswer extends Resource {
+
     /**
      * @var array
      */
     protected $fillable = [
         'id',
         'signup_question_id',
-        'value',
+        'value'
     ];
 
     /**

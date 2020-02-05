@@ -2,13 +2,13 @@
 
 namespace Eduframe;
 
+use Eduframe\Resources\Account;
 use Eduframe\Resources\Address;
 use Eduframe\Resources\Course;
 use Eduframe\Resources\Category;
 use Eduframe\Resources\Location;
 use Eduframe\Resources\Variant;
-use Eduframe\Resources\Customer;
-use Eduframe\Resources\CustomerEnrollment;
+use Eduframe\Resources\Order;
 use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Meeting;
@@ -37,6 +37,14 @@ class Client {
 	 */
 	public function __construct( $connection ) {
 		$this->connection = $connection;
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Account
+	 */
+	public function accounts( $attributes = [] ) {
+		return new Account( $this->connection, $attributes );
 	}
 
 	/**
@@ -83,18 +91,10 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\Customer
-	 */
-	public function customers( $attributes = [] ) {
-		return new Customer( $this->connection, $attributes );
-	}
-
-	/**
-	 * @param array $attributes
 	 * @return \Eduframe\Resources\CustomerEnrollment
 	 */
-	public function customer_enrollments( $attributes = [] ) {
-		return new CustomerEnrollment( $this->connection, $attributes );
+	public function orders( $attributes = [] ) {
+		return new Order( $this->connection, $attributes );
 	}
 
 	/**
@@ -127,14 +127,6 @@ class Client {
 	 */
 	public function planned_courses( $attributes = [] ) {
 		return new PlannedCourse( $this->connection, $attributes );
-	}
-
-	/**
-	 * @param array $attributes
-	 * @return \Eduframe\Resources\Teacher
-	 */
-	public function teachers( $attributes = [] ) {
-		return new Teacher( $this->connection, $attributes );
 	}
 
 	/**

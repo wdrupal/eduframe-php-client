@@ -6,8 +6,7 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class User extends Resource{
-
+class User extends Resource {
 	use FindAll, FindOne;
 
 	protected $fillable = [
@@ -16,11 +15,16 @@ class User extends Resource{
 		'middle_name',
 		'last_name',
 		'email',
-		'company_name',
+		'roles',
 		'phone',
 		'address',
-		'invoice_address',
-		'roles',
+		'teacher_headline',
+    	'teacher_description',
+    	'employee_number',
+		'slug',
+		'avatar_url',
+		'labels',
+		'personal_account',
 		'signup_answers',
 		'updated_at',
 		'created_at'
@@ -46,7 +50,7 @@ class User extends Resource{
 	 */
 	protected $singleNestedEntities = [
 		'address' => Address::class,
-		'invoice_address' => Address::class,
+		'personal_account' => Account::class,
 	];
 
 	/**
@@ -55,6 +59,10 @@ class User extends Resource{
 	protected $multipleNestedEntities = [
 		'signup_answers' => [
 			'entity' => SignupAnswer::class,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
+		'labels' => [
+			'entity' => Label::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
 	];

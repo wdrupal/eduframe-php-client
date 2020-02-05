@@ -6,24 +6,17 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class Customer extends Resource {
-
+class Account extends Resource{
 	use FindAll, FindOne;
 
-	/**
-	 * @var array
-	 */
 	protected $fillable = [
 		'id',
-		'first_name',
-		'middle_name',
-		'last_name',
-		'company_name',
+		'name',
 		'email',
-		'phone',
-		#'wants_newsletter',
-		#'roles',
+		'account_type',
+		'personal_user_id',
 		'address',
+		'signup_answers',
 		'updated_at',
 		'created_at'
 	];
@@ -31,20 +24,32 @@ class Customer extends Resource {
 	/**
 	 * @var string
 	 */
-	protected $endpoint = 'customers';
+	protected $model_name = 'Accounts';
 
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'customer';
+	protected $endpoint = 'accounts';
+
+	/**
+	 * @var string
+	 */
+	protected $namespace = 'account';
+
+	/**
+	 * @var array
+	 */
+	protected $singleNestedEntities = [
+		'address' => Address::class,
+	];
 
 	/**
 	 * @var array
 	 */
 	protected $multipleNestedEntities = [
-		'address' => [
-			'entity' => Address::class,
+		'signup_answers' => [
+			'entity' => SignupAnswer::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
+		]
 	];
 }

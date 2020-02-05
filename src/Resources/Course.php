@@ -7,11 +7,7 @@ use Eduframe\Resources\Credits\Definition;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-/**
- * @property integer id
- */
 class Course extends Resource {
-
 	use FindAll, FindOne;
 
 	/**
@@ -30,8 +26,6 @@ class Course extends Resource {
 		'starting_price',
 		'signup_url',
 		'slug_history',
-		'avatar_url',
-		'avatar_thumb_url',
 		'avatar',
 		'level',
 		'result',

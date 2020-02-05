@@ -1,24 +1,24 @@
 <?php
+
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class Teacher extends Resource {
+class Order extends Resource {
 	use FindAll, FindOne;
+
 	/**
 	 * @var array
 	 */
 	protected $fillable = [
 		'id',
-		'first_name',
-		'middle_name',
-		'last_name',
-		'teacher_description',
-		'teacher_headline',
-		'avatar_url',
-		'slug',
+		'number',
+		'status',
+		'start_date',
+		'end_date',
+		'number_of_students',
 		'updated_at',
 		'created_at'
 	];
@@ -26,16 +26,10 @@ class Teacher extends Resource {
 	/**
 	 * @var string
 	 */
+	protected $endpoint = 'orders';
 
-	protected $model_name = 'User';
 	/**
 	 * @var string
 	 */
-
-	protected $endpoint = 'teachers';
-	/**
-	 * @var string
-	 */
-
-	protected $namespace = 'teacher';
+	protected $namespace = 'order';
 }
