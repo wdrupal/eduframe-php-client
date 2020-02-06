@@ -6,9 +6,7 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-
 class Enrollment extends Resource {
-
 	use FindAll, FindOne;
 
 	/**
@@ -20,9 +18,8 @@ class Enrollment extends Resource {
 		'status',
 		'comments',
 		'graduation_state',
-		'created_at',
 		'updated_at',
-		'course'
+		'created_at'
 	];
 
 	/**
@@ -34,11 +31,4 @@ class Enrollment extends Resource {
 	 * @var string
 	 */
 	protected $namespace = 'enrollment';
-
-	/**
-	 * @var array
-	 */
-	protected $singleNestedEntities = [
-		'course'  => Course::class,
-	];
 }

@@ -7,7 +7,6 @@ use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
 class Meeting extends Resource {
-
 	use FindAll, FindOne;
 
 	/**
@@ -23,7 +22,7 @@ class Meeting extends Resource {
 		'start_date_time',
 		'end_date_time',
 		'updated_at',
-		'created_at',
+		'created_at'
 	];
 
 	/**

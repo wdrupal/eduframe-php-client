@@ -7,7 +7,6 @@ use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
 class PlannedCourse extends Resource {
-
 	use FindAll, FindOne;
 
 	/**

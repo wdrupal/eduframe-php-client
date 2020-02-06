@@ -5,11 +5,7 @@ namespace Eduframe\Resources;
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 
-/**
- * @property integer id
- */
 class Referral extends Resource {
-
 	use FindAll;
 
 	/**
@@ -17,7 +13,7 @@ class Referral extends Resource {
 	 */
 	protected $fillable = [
 		'id',
-		'name',
+		'name'
 	];
 
 	/**

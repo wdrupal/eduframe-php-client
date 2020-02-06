@@ -11,7 +11,7 @@ class Category extends Resource {
 	 */
 	protected $fillable = [
 		'id',
-		'name',
+		'name'
 	];
 
 	/**

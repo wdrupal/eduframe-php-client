@@ -5,8 +5,7 @@ namespace Eduframe\Resources;
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 
-class PaymentOption extends Resource
-{
+class PaymentOption extends Resource {
     use FindAll;
 
     /**
@@ -17,7 +16,7 @@ class PaymentOption extends Resource
         'name',
         'extra_cost',
         'percentage',
-        'multiplier',
+        'multiplier'
     ];
 
     /**
