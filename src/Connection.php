@@ -103,8 +103,14 @@ class Connection {
 		// Add default json headers to the request
 		$headers = array_merge( $headers, [
 			'Accept' => 'application/json',
-			// 'Content-type' => 'application/json'
 		] );
+
+		// Add content type when [POST PATCH PUT] request
+		if (in_array($method, ['POST', 'PATCH', 'PUT'])) {
+			$headers = array_merge( $headers, [
+				'Content-Type' => 'application/json'
+			] );
+		}
 
 		// If we have a token, sign the request
 		if ( ! empty( $this->accessToken ) ) {
@@ -191,9 +197,7 @@ class Connection {
 	 */
 	public function post( $url, $body ) {
 		try {
-			$request = $this->createRequestNoJson( 'POST', $this->formatUrl( $url, 'post' ), $body );
-
-
+			$request = $this->createRequest( 'POST', $this->formatUrl( $url, 'post' ), $body );
 			$response = $this->client()->send( $request );
 
 			return $this->parseResponse( $response );
@@ -211,7 +215,7 @@ class Connection {
 	 */
 	public function patch( $url, $body ) {
 		try {
-			$request  = $this->createRequestNoJson( 'PATCH', $this->formatUrl( $url, 'patch' ), $body );
+			$request  = $this->createRequest( 'PUT', $this->formatUrl( $url, 'patch' ), $body );
 			$response = $this->client()->send( $request );
 
 			return $this->parseResponse( $response );

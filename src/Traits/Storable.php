@@ -29,7 +29,7 @@ trait Storable {
 	 */
 	public function insert() {
 
-		$result = $this->connection()->post( $this->getEndpoint(), http_build_query( $this->attributes() ) );
+		$result = $this->connection()->post( $this->getEndpoint(), $this->json() );
 
 		return $this->selfFromResponse( $result );
 	}
@@ -41,7 +41,7 @@ trait Storable {
 	 */
 	public function update() {
 
-		$result = $this->connection()->patch( $this->getEndpoint() . '/' . urlencode( $this->id ), http_build_query( $this->attributes() ) );
+		$result = $this->connection()->patch( $this->getEndpoint() . '/' . urlencode( $this->id ), $this->json() );
 
 		if ( $result === 200 ) {
 			return true;

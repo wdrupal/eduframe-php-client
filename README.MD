@@ -60,6 +60,20 @@ $planned_courses = $client->planned_courses()->all(['include' => 'meetings']);
 
 // Example: Fetch a single planned course by id
 $planned_course = $client->planned_courses()->find(123456789);
+
+// Example: Create a lead
+$lead = $client->leads();
+$lead->company_name = 'Drieam';
+$lead->first_name = 'Luuk';
+$lead->middle_name = 'van';
+$lead->last_name = 'Hulten';
+$lead->address = $client->addresses([
+    'address' => 'Don Boscostraat 4',  
+    'postal_code' => '5611 KW',  
+    'city' => 'Eindhoven',  
+    'country' => 'NL',  
+]);
+$lead->save();
 ```
 
 ## Code example
