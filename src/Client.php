@@ -8,6 +8,7 @@ use Eduframe\Resources\Category;
 use Eduframe\Resources\Course;
 use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
+use Eduframe\Resources\Lead;
 use Eduframe\Resources\Location;
 use Eduframe\Resources\Meeting;
 use Eduframe\Resources\Variant;
@@ -104,6 +105,14 @@ class Client {
         return new Label( $this->connection, $attributes );
 	}
 	
+	/**
+     * @param array $attributes
+     * @return \Eduframe\Resources\Lead
+     */
+    public function leads( $attributes = [] ) {
+        return new Lead( $this->connection, $attributes );
+	}
+
 	/**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\Meeting

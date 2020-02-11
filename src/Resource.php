@@ -179,7 +179,7 @@ abstract class Resource implements JsonSerializable
     {
         $array = $this->getArrayWithNestedObjects();
 
-        return json_encode($array, JSON_FORCE_OBJECT);
+        return json_encode($array);
     }
 
     /**
@@ -222,7 +222,13 @@ abstract class Resource implements JsonSerializable
             }
 
             if (array_key_exists($attributeName, $this->getSingleNestedEntities())) {
-                $result[$attributeName] = $attributeValue->attributes;
+                if ($useAttributesAppend) {
+                    $attributeNameToUse = $attributeName . '_attributes';
+                } else {
+                    $attributeNameToUse = $attributeName;
+                }
+
+                $result[$attributeNameToUse] = $attributeValue->attributes;
             }
 
             if (array_key_exists($attributeName, $multipleNestedEntities)) {
@@ -235,10 +241,10 @@ abstract class Resource implements JsonSerializable
                 $result[$attributeNameToUse] = [];
                 foreach ($attributeValue as $attributeEntity) {
                     $result[$attributeNameToUse][] = $attributeEntity->attributes;
+                }
 
-                    if ($multipleNestedEntities[$attributeName]['type'] === self::NESTING_TYPE_NESTED_OBJECTS) {
-                        $result[$attributeNameToUse] = (object)$result[$attributeNameToUse];
-                    }
+                if ($multipleNestedEntities[$attributeName]['type'] === self::NESTING_TYPE_NESTED_OBJECTS) {
+                    $result[$attributeNameToUse] = (object) $result[$attributeNameToUse];
                 }
 
                 if (

@@ -61,7 +61,7 @@ class PlannedCourse extends Resource {
 			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
 		],
 		'teachers'    => [
-			'entity' => Teacher::class,
+			'entity' => User::class,
 			'type'   => self::NESTING_TYPE_ARRAY_OF_OBJECTS,
 		]
 	];
