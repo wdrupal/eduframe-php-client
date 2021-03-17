@@ -3,11 +3,10 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
-use Eduframe\Resources\Credits\Definition;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class Course extends Resource {
+class Program extends Resource {
 	use FindAll, FindOne;
 
 	/**
@@ -16,23 +15,13 @@ class Course extends Resource {
 	protected $fillable = [
 		'id',
 		'category_id',
-		'slug',
 		'name',
-		'position',
-		'meta_title',
-		'meta_description',
-		'code',
-		'duration',
-		'starting_price',
-		'signup_url',
-		'slug_history',
-		'avatar',
-		'level',
-		'result',
-		'course_tab_contents',
-		'credit_definitions',
-		'labels',
+		'slug',
+		'cost',
+		'conditions',
 		'is_published',
+		'course_tab_contents',
+		'labels',
 		'custom',
 		'updated_at',
 		'created_at'
@@ -41,17 +30,17 @@ class Course extends Resource {
 	/**
 	 * @var string
 	 */
-	protected $model_name = 'Course';
+	protected $model_name = 'Program';
 
 	/**
 	 * @var string
 	 */
-	protected $endpoint = 'courses';
+	protected $endpoint = 'program/programs';
 
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'course';
+	protected $namespace = 'program';
 
 	/**
 	 * @var array
@@ -59,10 +48,6 @@ class Course extends Resource {
 	protected $multipleNestedEntities = [
 		'course_tab_contents' => [
 			'entity' => CourseTabContent::class,
-			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-		],
-		'credit_definitions' => [
-			'entity' => Definition::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
 		'labels' => [

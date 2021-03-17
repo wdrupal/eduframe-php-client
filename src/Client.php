@@ -6,6 +6,7 @@ use Eduframe\Resources\Account;
 use Eduframe\Resources\Address;
 use Eduframe\Resources\Category;
 use Eduframe\Resources\Course;
+use Eduframe\Resources\Edition;
 use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Lead;
@@ -16,6 +17,7 @@ use Eduframe\Resources\Order;
 use Eduframe\Resources\PaymentMethod;
 use Eduframe\Resources\PaymentOption;
 use Eduframe\Resources\PlannedCourse;
+use Eduframe\Resources\Program;
 use Eduframe\Resources\Referral;
 use Eduframe\Resources\SignupQuestion;
 use Eduframe\Resources\User;
@@ -73,6 +75,14 @@ class Client {
 
 	/**
 	 * @param array $attributes
+	 * @return \Eduframe\Resources\Course
+	 */
+	public function programs( $attributes = [] ) {
+		return new Program( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
 	 *
 	 * @return \Eduframe\Resources\Location
 	 */
@@ -87,6 +97,14 @@ class Client {
 	 */
 	public function course_variants( $attributes = [] ) {
 		return new Variant( $this->connection, $attributes );
+	}
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Edition
+	 */
+	public function editions( $attributes = [] ) {
+		return new Edition( $this->connection, $attributes );
 	}
 
 	/**

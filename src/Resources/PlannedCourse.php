@@ -30,6 +30,7 @@ class PlannedCourse extends Resource {
 		'course_variant',
 		'course_location',
 		'available_places',
+		'min_participants',
 		'max_participants',
 		'current_participants',
 		'is_published',
