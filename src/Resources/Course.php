@@ -29,6 +29,7 @@ class Course extends Resource {
 		'avatar',
 		'level',
 		'result',
+		'conditions_or_default',
 		'course_tab_contents',
 		'credit_definitions',
 		'labels',
