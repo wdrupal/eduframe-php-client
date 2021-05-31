@@ -28,7 +28,10 @@ class Lead extends Resource {
 		'website_url',
 		'course_ids',
 		'address',
-		'labels'
+		'labels',
+		'courses_leads',
+		'updated_at',
+		'created_at'
 	];
 
 	/**
@@ -54,6 +57,10 @@ class Lead extends Resource {
 	protected $multipleNestedEntities = [
 		'labels' => [
 			'entity' => Label::class,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
+		],
+		'courses_leads' => [
+			'entity' => LeadInterest::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
 	];

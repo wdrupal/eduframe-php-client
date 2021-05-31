@@ -43,6 +43,11 @@ $lead->address = $client->addresses([
     'city' => 'Eindhoven',  
     'country' => 'NL',  
 ]);
+$lead->courses_leads = [$client->lead_interests([
+    "course_id" => 133,
+    "planned_course_id" => null
+])];
+
 $lead->save();
 
 header( "Content-Type: application/json" );
