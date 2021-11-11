@@ -15,6 +15,7 @@ class Lead extends Resource {
 	 */
 	protected $fillable = [
 		'id',
+		'title',
 		'company_name',
 		'first_name',
 		'middle_name',
