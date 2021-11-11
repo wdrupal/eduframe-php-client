@@ -33,6 +33,7 @@ $data['teachers'] = $client->users()->all(['role' => 'teacher']);
 
 // Create a new lead
 $lead = $client->leads();
+$lead->title = 'Some title';
 $lead->company_name = 'Drieam';
 $lead->first_name = 'Luuk';
 $lead->middle_name = 'van';
