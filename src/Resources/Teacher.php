@@ -6,7 +6,7 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class User extends Resource {
+class Teacher extends Resource {
 	use FindAll, FindOne;
 
 	protected $fillable = [
@@ -33,17 +33,17 @@ class User extends Resource {
 	/**
 	 * @var string
 	 */
-	protected $model_name = 'Users';
+	protected $model_name = 'Teachers';
 
 	/**
 	 * @var string
 	 */
-	protected $endpoint = 'users';
+	protected $endpoint = 'teachers';
 
 	/**
 	 * @var string
 	 */
-	protected $namespace = 'user';
+	protected $namespace = 'teacher';
 
 	/**
 	 * @var array

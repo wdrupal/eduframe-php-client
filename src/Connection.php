@@ -23,12 +23,7 @@ class Connection {
 	/**
 	 * @var string
 	 */
-	private $apiUrl = 'https://{educator_slug}.eduframe.nl/api/v1';
-
-	/**
-	 * @var
-	 */
-	private $educator_slug;
+	private $apiUrl = 'https://api.eduframe.nl/api/v1';
 
 	/**
 	 * @var
@@ -262,13 +257,6 @@ class Connection {
 	}
 
 	/**
-	 * @param mixed $educator_slug
-	 */
-	public function setEducatorSlug( $educator_slug ) {
-		$this->educator_slug = $educator_slug;
-	}
-
-	/**
 	 * @param mixed $accessToken
 	 */
 	public function setAccessToken( $accessToken ) {
@@ -353,12 +341,12 @@ class Connection {
 	 */
 	private function formatUrl( $url, $method = 'get' ) {
 		if ( $this->stage == TESTING ) {
-			return 'https://' . $this->educator_slug . '.testing.eduframe.dev/api/v1' . '/' . $url;
+			return 'https://api.testing.eduframe.dev/api/v1' . '/' . $url;
 		} else if ( $this->stage == STAGING ) {
-			return 'https://' . $this->educator_slug . '.edufra.me/api/v1' . '/' . $url;
+			return 'https://api.edufra.me/api/v1' . '/' . $url;
 		}
 
-		return str_replace( '{educator_slug}', $this->educator_slug, $this->apiUrl ) . '/' . $url;
+		return $this->apiUrl  . '/' . $url;
 	}
 
 		/**

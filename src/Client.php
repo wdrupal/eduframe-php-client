@@ -21,7 +21,7 @@ use Eduframe\Resources\PlannedCourse;
 use Eduframe\Resources\Program;
 use Eduframe\Resources\Referral;
 use Eduframe\Resources\SignupQuestion;
-use Eduframe\Resources\User;
+use Eduframe\Resources\Teacher;
 
 /**
  * Class Eduframe
@@ -198,10 +198,10 @@ class Client {
 
 	/**
 	 * @param array $attributes
-	 * @return \Eduframe\Resources\User
+	 * @return \Eduframe\Resources\Teacher
 	 */
-	public function users( $attributes = [] ) {
-		return new User( $this->connection, $attributes );
+	public function teachers( $attributes = [] ) {
+		return new Teacher( $this->connection, $attributes );
 	}
 
 	/**
