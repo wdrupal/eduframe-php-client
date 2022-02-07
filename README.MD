@@ -11,9 +11,6 @@ This package is not puslished on packagist yet.
 composer ..
 ```
 
-## Usage
-To access the api you need at least the Educator slug.
-
 ### Access token
 Fetching published courses can be executed without an access token.
 
@@ -23,17 +20,16 @@ Fetching published courses can be executed without an access token.
 require __DIR__ . '/vendor/autoload.php';
 
 $connection = new \Eduframe\Connection();
-$connection->setEducatorSlug( 'EDUCATOR' );
 ```
 However when accessing invoices or users an access token is required.
-An access token can be obtained by requesting one via [Drieam support](mailto:support@drieam.com).
+An access token can be obtained by going to your profile page in the Eduframe admin dashboard.
 
 ```
 $connection->setAccessToken( 'ACCESS_TOKEN' );
 ```
 
 ### Normal actions
-After you have set the educator for the request the data can be fetched as following:
+After you have set the api key, the data can be fetched as following:
 
 ```php
 <?php
@@ -41,7 +37,6 @@ After you have set the educator for the request the data can be fetched as follo
 require __DIR__ . '/vendor/autoload.php';
 
 $connection = new \Eduframe\Connection();
-$connection->setEducatorSlug( 'EDUCATOR' );
 
 // Set this in case you need an access token for your requests.
 $connection->setAccessToken('ACCESSTOKEN');
