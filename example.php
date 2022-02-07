@@ -2,14 +2,12 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$educator_slug = 'programme-builder';
-$access_token  = 'cd6395755d220afd2f11bdbe9d1b2dcf'; # testing program builder key
+$access_token  = 'GUFBU8ZDGRFiX5q-Xt8nzwSuO6VzXb6zBM_IVHQqQd_Y4pAnjT6PtKkU324OROqt'; # testing program builder key
 
 $connection = new Eduframe\Connection();
 
 $connection->setAccessToken( $access_token );
-$connection->setEducatorSlug( $educator_slug );
-$connection->setStage( Eduframe\TESTING );
+$connection->setStage( Eduframe\STAGING );
 
 $client = new Eduframe\Client( $connection );
 
@@ -23,7 +21,7 @@ $data = [];
 // $data['users'] = $client->users()->all(['include' => 'address,signup_answers,labels,personal_account']);
 
 // To get teachers pass the correct role
-$data['teachers'] = $client->users()->all(['role' => 'teacher']);
+$data['teachers'] = $client->teachers()->all();
 
 // $data['accounts'] = $client->accounts()->all(['include' => 'address,signup_answers']);
 // $data['payment_methods'] = $client->payment_methods()->all();
