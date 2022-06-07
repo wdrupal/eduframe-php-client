@@ -18,6 +18,7 @@ class Order extends Resource {
 		'status',
 		'account_id',
 		'creator_id',
+		'catalog_variant_id',
 		'start_date',
 		'end_date',
 		'number_of_students',
