@@ -15,6 +15,7 @@ class CatalogProduct extends Resource {
     protected $fillable = [
         'id',
         'name',
+		'slug',
         'category_id',
         'productable_type',
         'productable_id',
