@@ -26,6 +26,7 @@ class Lead extends Resource {
 		'status',
 		'quality',
 		'wants_newsletter',
+		'comment',
 		'website_url',
 		'course_ids',
 		'address',
