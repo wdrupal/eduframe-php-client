@@ -29,6 +29,7 @@ class Lead extends Resource {
 		'comment',
 		'website_url',
 		'course_ids',
+		'label_ids',
 		'address',
 		'labels',
 		'courses_leads',
