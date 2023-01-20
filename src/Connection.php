@@ -94,7 +94,7 @@ class Connection {
 	 * @param array $headers
 	 * @return \GuzzleHttp\Psr7\Request
 	 */
-	private function createRequest( $method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [] ) {
+	private function createRequest( $method = 'GET', $endpoint = '', $body = null, array $params = [], array $headers = [] ) {
 		// Add default json headers to the request
 		$headers = array_merge( $headers, [
 			'Accept' => 'application/json',
@@ -132,7 +132,7 @@ class Connection {
 	 * @return \GuzzleHttp\Psr7\Request
 	 * @throws \Eduframe\Exceptions\ApiException
 	 */
-	private function createRequestNoJson( $method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [] ) {
+	private function createRequestNoJson( $method = 'GET', $endpoint = '', $body = null, array $params = [], array $headers = [] ) {
 		// Add default json headers to the request
 		$headers = array_merge( $headers, [
 			'Content-type' => 'application/x-www-form-urlencoded'
