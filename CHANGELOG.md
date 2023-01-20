@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Drieam/eduframe-php-client/compare/v1.0.0...v1.0.1) (2023-01-20)
+
+
+### Miscellaneous Chores
+
+* Lower php requirement to 7 ([e0c19ca](https://github.com/Drieam/eduframe-php-client/commit/e0c19cabd6e4f47717b61b9c6be7916c9e2a72d9))
+
 ## 1.0.0 (2023-01-20)
 
 
