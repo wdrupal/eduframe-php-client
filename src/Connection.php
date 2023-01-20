@@ -172,8 +172,10 @@ class Connection {
 			$json = $this->parseResponse( $response );
 
 			if ( $fetchAll === true ) {
-				if ( $nextParams = $this->getNextParams( $response->getHeaderLine( 'Link' ) ) ) {
-					$json = array_merge( $json, $this->get( $url, $nextParams, $fetchAll ) );
+				while ( $nextParams = $this->getNextParams( $response->getHeaderLine( 'Link' ) ) ) {
+					$request  = $this->createRequest( 'GET', $this->formatUrl( $url, 'get' ), null, $nextParams );
+					$response = $this->client()->send( $request );
+					$json = array_merge( $json, $this->parseResponse( $response ) );
 				}
 			}
 
