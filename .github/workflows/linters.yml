@@ -1,0 +1,22 @@
+name: Check linters
+
+on: [pull_request]
+
+concurrency:
+  group: linters-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-linters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Run composer install
+        uses: php-actions/composer@v6
+        with:
+          php_version: 8.1
+
+      - name: Run PHP linters
+        run: vendor/bin/phpcs ./src -s -p -n --ignore=*/vendor/* --extensions=php
