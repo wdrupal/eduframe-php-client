@@ -7,6 +7,7 @@ use Eduframe\Resources\Address;
 use Eduframe\Resources\Category;
 use Eduframe\Resources\Course;
 use Eduframe\Resources\Edition;
+use Eduframe\Resources\Element;
 use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Lead;
@@ -109,6 +110,17 @@ class Client {
 	public function editions( $attributes = [] ) {
 		return new Edition( $this->connection, $attributes );
 	}
+
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\Element
+     *
+     * @deprecated This endpoint will only return elements of type 'Course Element'
+     * that are directly linked to the program edition(s). It does not consider possible blocks.
+     */
+    public function elements( $attributes = [] ) {
+        return new Element( $this->connection, $attributes );
+    }
 
 	/**
 	 * @param array $attributes
