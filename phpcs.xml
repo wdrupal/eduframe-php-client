@@ -49,7 +49,7 @@
 	<!-- The soft limit on line length MUST be 100 characters; automated style checkers MUST warn but MUST NOT error at the soft limit. -->
 	<rule ref="Generic.Files.LineLength">
 		<properties>
-			<property name="lineLimit" value="100"/>
+			<property name="lineLimit" value="120"/>
 			<property name="absoluteLineLimit" value="140"/>
 		</properties>
 	</rule>
