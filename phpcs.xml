@@ -3,6 +3,7 @@
 	<description>The Eduframe client library coding standard.</description>
 
 	<file>src</file>
+	<file>example.php</file>
 
 	<!-- Our library interface uses snake case -->
 	<rule ref="Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps">
