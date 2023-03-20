@@ -255,7 +255,7 @@ class Connection
 
             return $this->parseResponse($response);
         } catch ( Exception $e ) {
-            $this->parseExceptionForErrorMessages($e);
+            throw $this->parseExceptionForErrorMessages($e);
         }
     }
 
