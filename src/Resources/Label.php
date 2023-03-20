@@ -6,7 +6,8 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class Label extends Resource {
+class Label extends Resource
+{
     use FindAll, FindOne;
 
     protected $fillable = [

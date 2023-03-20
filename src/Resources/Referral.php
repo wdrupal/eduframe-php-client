@@ -5,29 +5,30 @@ namespace Eduframe\Resources;
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 
-class Referral extends Resource {
-	use FindAll;
+class Referral extends Resource
+{
+    use FindAll;
 
-	/**
-	 * @var array
-	 */
-	protected $fillable = [
-		'id',
-		'name'
-	];
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'id',
+        'name'
+    ];
 
-	/**
-	 * @var string
-	 */
-	protected $model_name = 'Referral';
+    /**
+     * @var string
+     */
+    protected $model_name = 'Referral';
 
-	/**
-	 * @var string
-	 */
-	protected $endpoint = 'referrals';
+    /**
+     * @var string
+     */
+    protected $endpoint = 'referrals';
 
-	/**
-	 * @var string
-	 */
-	protected $namespace = 'referrals';
+    /**
+     * @var string
+     */
+    protected $namespace = 'referrals';
 }

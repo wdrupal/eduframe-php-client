@@ -6,7 +6,8 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class CatalogVariant extends Resource {
+class CatalogVariant extends Resource
+{
     use FindAll, FindOne;
 
     /**

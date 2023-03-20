@@ -6,7 +6,8 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class CatalogProduct extends Resource {
+class CatalogProduct extends Resource
+{
     use FindAll, FindOne;
 
     /**
@@ -15,7 +16,7 @@ class CatalogProduct extends Resource {
     protected $fillable = [
         'id',
         'name',
-		'slug',
+        'slug',
         'category_id',
         'productable_type',
         'productable_id',

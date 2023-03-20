@@ -5,7 +5,8 @@ namespace Eduframe\Resources;
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 
-class SignupQuestion extends Resource {
+class SignupQuestion extends Resource
+{
     use FindAll;
 
     /**

@@ -6,7 +6,8 @@ use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 
-class Element extends Resource {
+class Element extends Resource
+{
     use FindAll, FindOne;
 
     /**

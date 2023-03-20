@@ -61,8 +61,7 @@ abstract class Resource implements JsonSerializable
      * @param \Eduframe\Connection $connection
      * @param array $attributes
      */
-    public function __construct(Connection $connection, array $attributes = [ ])
-    {
+    public function __construct(Connection $connection, array $attributes = [ ]) {
         $this->connection = $connection;
         $this->fill($attributes);
     }
@@ -72,8 +71,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return \Eduframe\Connection
      */
-    public function connection()
-    {
+    public function connection() {
         return $this->connection;
     }
 
@@ -82,8 +80,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return array
      */
-    public function attributes()
-    {
+    public function attributes() {
         return $this->attributes;
     }
 
@@ -92,8 +89,7 @@ abstract class Resource implements JsonSerializable
      *
      * @param array $attributes
      */
-    protected function fill(array $attributes)
-    {
+    protected function fill(array $attributes) {
         foreach ($this->fillableFromArray($attributes) as $key => $value) {
             if ($this->isFillable($key)) {
                 $this->setAttribute($key, $value);
@@ -108,8 +104,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return array
      */
-    protected function fillableFromArray(array $attributes)
-    {
+    protected function fillableFromArray(array $attributes) {
         if (count($this->fillable) > 0) {
             return array_intersect_key($attributes, array_flip($this->fillable));
         }
@@ -121,8 +116,7 @@ abstract class Resource implements JsonSerializable
      * @param string $key
      * @return bool
      */
-    protected function isFillable($key)
-    {
+    protected function isFillable($key) {
         return in_array($key, $this->fillable, true);
     }
 
@@ -130,8 +124,7 @@ abstract class Resource implements JsonSerializable
      * @param string $key
      * @param mixed $value
      */
-    protected function setAttribute($key, $value)
-    {
+    protected function setAttribute($key, $value) {
         $this->attributes[$key] = $value;
     }
 
@@ -140,9 +133,8 @@ abstract class Resource implements JsonSerializable
      *
      * @return mixed
      */
-    public function __get($key)
-    {
-        if (isset( $this->attributes[$key] )) {
+    public function __get($key) {
+        if (isset($this->attributes[$key])) {
             return $this->attributes[$key];
         }
 
@@ -153,8 +145,7 @@ abstract class Resource implements JsonSerializable
      * @param string $key
      * @param mixed $value
      */
-    public function __set($key, $value)
-    {
+    public function __set($key, $value) {
         if ($this->isFillable($key)) {
             $this->setAttribute($key, $value);
         }
@@ -163,20 +154,18 @@ abstract class Resource implements JsonSerializable
     /**
      * @return bool
      */
-    public function exists()
-    {
+    public function exists() {
         if ( ! array_key_exists($this->primaryKey, $this->attributes)) {
             return false;
         }
 
-        return ! empty( $this->attributes[$this->primaryKey] );
+        return ! empty($this->attributes[$this->primaryKey]);
     }
 
     /**
      * @return string
      */
-    public function json()
-    {
+    public function json() {
         $array = $this->getArrayWithNestedObjects();
 
         return json_encode($array);
@@ -185,8 +174,7 @@ abstract class Resource implements JsonSerializable
     /**
      * @return string
      */
-    public function jsonWithNamespace()
-    {
+    public function jsonWithNamespace() {
         if ($this->namespace !== '') {
             return json_encode([$this->namespace => $this->getArrayWithNestedObjects()], JSON_FORCE_OBJECT);
         } else {
@@ -202,8 +190,7 @@ abstract class Resource implements JsonSerializable
      * @since 5.4.0
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         return $this->attributes();
     }
 
@@ -212,8 +199,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return array
      */
-    private function getArrayWithNestedObjects($useAttributesAppend = true)
-    {
+    private function getArrayWithNestedObjects($useAttributesAppend = true) {
         $result = [];
         $multipleNestedEntities = $this->getMultipleNestedEntities();
 
@@ -267,8 +253,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return static
      */
-    public function makeFromResponse(array $response)
-    {
+    public function makeFromResponse(array $response) {
         $entity = new static($this->connection);
         $entity->selfFromResponse($response);
 
@@ -282,20 +267,17 @@ abstract class Resource implements JsonSerializable
      *
      * @return $this
      */
-    public function selfFromResponse(array $response)
-    {
+    public function selfFromResponse(array $response) {
         $this->fill($response);
 
-        foreach ($this->getSingleNestedEntities() as $key => $value)
-        {
+        foreach ($this->getSingleNestedEntities() as $key => $value) {
             if (isset($response[$key])) {
                 $entityName = $value;
                 $this->$key = new $entityName($this->connection, $response[$key]);
             }
         }
 
-        foreach ($this->getMultipleNestedEntities() as $key => $value)
-        {
+        foreach ($this->getMultipleNestedEntities() as $key => $value) {
             if (isset($response[$key])) {
                 $entityName =  $value['entity'];
                 /** @var self $instantiatedEntity */
@@ -312,8 +294,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return array
      */
-    public function collectionFromResult(array $result)
-    {
+    public function collectionFromResult(array $result) {
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
         if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
@@ -331,16 +312,14 @@ abstract class Resource implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getSingleNestedEntities()
-    {
+    public function getSingleNestedEntities() {
         return $this->singleNestedEntities;
     }
 
     /**
      * @return array
      */
-    public function getMultipleNestedEntities()
-    {
+    public function getMultipleNestedEntities() {
         return $this->multipleNestedEntities;
     }
 
@@ -349,11 +328,9 @@ abstract class Resource implements JsonSerializable
      *
      * @return array
      */
-    public function __debugInfo()
-    {
+    public function __debugInfo() {
         $result = [];
-        foreach ($this->fillable as $attribute)
-        {
+        foreach ($this->fillable as $attribute) {
             $result[$attribute] = $this->$attribute;
         }
         return $result;
@@ -362,8 +339,7 @@ abstract class Resource implements JsonSerializable
     /**
      * @return string
      */
-    public function getEndpoint()
-    {
+    public function getEndpoint() {
         return $this->endpoint;
     }
 
@@ -374,8 +350,7 @@ abstract class Resource implements JsonSerializable
      *
      * @return bool
      */
-    public function __isset($name)
-    {
+    public function __isset($name) {
         return (isset($this->attributes[$name]) && null !== $this->attributes[$name]);
     }
 }

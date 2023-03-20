@@ -19,4 +19,4 @@ jobs:
           php_version: 8.1
 
       - name: Run PHP linters
-        run: vendor/bin/phpcs ./src -s -p -n --ignore=*/vendor/* --extensions=php
+        run: vendor/bin/phpcs -s -p -n --ignore=*/vendor/* --extensions=php
