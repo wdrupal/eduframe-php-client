@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/Drieam/eduframe-php-client/compare/v1.1.0...v1.2.0) (2023-03-20)
+
+
+### Features
+
+* Add phpcs configuration ([e6476e9](https://github.com/Drieam/eduframe-php-client/commit/e6476e96054815109e3fc447c1722e80d43d12dc))
+* Add show_on_website to product and variant ([4e15908](https://github.com/Drieam/eduframe-php-client/commit/4e1590864afad75ff02298384008f0342290aa90))
+
+
+### Bug Fixes
+
+* Add missing throw statement ([d2dbea7](https://github.com/Drieam/eduframe-php-client/commit/d2dbea7501c8a1e81d4f47fc8f6980799160a968))
+
 ## [1.1.0](https://github.com/Drieam/eduframe-php-client/compare/v1.0.1...v1.1.0) (2023-02-15)
 
 
