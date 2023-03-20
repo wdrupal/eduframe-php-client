@@ -20,6 +20,7 @@ class CatalogVariant extends Resource {
         'variantable_id',
         'is_published',
         'cost_scheme',
+        'show_on_website',
         'cost',
         'custom',
         'availability',

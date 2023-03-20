@@ -21,6 +21,7 @@ class CatalogProduct extends Resource {
         'productable_id',
         'is_published',
         'cost_scheme',
+        'show_on_website',
         'cost',
         'position',
         'avatar',
