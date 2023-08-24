@@ -16,8 +16,6 @@ class Teacher extends Resource
         'middle_name',
         'last_name',
         'email',
-        'roles',
-        'phone',
         'address',
         'teacher_headline',
         'teacher_description',
@@ -25,8 +23,8 @@ class Teacher extends Resource
         'slug',
         'avatar_url',
         'labels',
-        'personal_account',
         'signup_answers',
+        'custom',
         'updated_at',
         'created_at'
     ];
@@ -50,18 +48,13 @@ class Teacher extends Resource
      * @var array
      */
     protected $singleNestedEntities = [
-        'address' => Address::class,
-        'personal_account' => Account::class,
+        'address' => Address::class
     ];
 
     /**
      * @var array
      */
     protected $multipleNestedEntities = [
-        'signup_answers' => [
-            'entity' => SignupAnswer::class,
-            'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
-        ],
         'labels' => [
             'entity' => Label::class,
             'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
