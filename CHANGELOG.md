@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Drieam/eduframe-php-client/compare/v1.2.0...v1.3.0) (2023-08-24)
+
+
+### Features
+
+* Align teacher properties with api ([b2b0a14](https://github.com/Drieam/eduframe-php-client/commit/b2b0a14bb7df603c80af187c5f0e0d763701ea37))
+
 ## [1.2.0](https://github.com/Drieam/eduframe-php-client/compare/v1.1.0...v1.2.0) (2023-03-20)
 
 
