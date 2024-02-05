@@ -12,6 +12,7 @@ use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Lead;
 use Eduframe\Resources\LeadInterest;
+use Eduframe\Resources\LeadProduct;
 use Eduframe\Resources\Location;
 use Eduframe\Resources\Meeting;
 use Eduframe\Resources\Variant;
@@ -153,6 +154,14 @@ class Client
      */
     public function lead_interests($attributes = []) {
         return new LeadInterest($this->connection, $attributes);
+    }
+
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\LeadProduct
+     */
+    public function lead_products($attributes = []) {
+        return new LeadProduct($this->connection, $attributes);
     }
 
     /**

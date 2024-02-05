@@ -34,6 +34,7 @@ class Lead extends Resource
         'address',
         'labels',
         'courses_leads',
+        'lead_products',
         'updated_at',
         'created_at'
     ];
@@ -65,6 +66,10 @@ class Lead extends Resource
         ],
         'courses_leads' => [
             'entity' => LeadInterest::class,
+            'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
+        ],
+        'lead_products' => [
+            'entity' => LeadProduct::class,
             'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
         ],
     ];
