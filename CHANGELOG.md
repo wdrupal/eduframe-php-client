@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Drieam/eduframe-php-client/compare/v1.3.0...v1.3.1) (2024-02-09)
+
+
+### Miscellaneous Chores
+
+* Update example with new lead creation ([ff16952](https://github.com/Drieam/eduframe-php-client/commit/ff16952c604fd775ba17d9d105aa1592ea4e5d80))
+
 ## [1.3.0](https://github.com/Drieam/eduframe-php-client/compare/v1.2.0...v1.3.0) (2023-08-24)
 
 
