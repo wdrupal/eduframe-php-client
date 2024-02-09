@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$access_token = 'GUFBU8ZDGRFiX5q-Xt8nzwSuO6VzXb6zBM_IVHQqQd_Y4pAnjT6PtKkU324OROqt'; # testing program builder key
+$access_token = '<ACCESS_TOKEN>'; # testing program builder key
 
 $connection = new Eduframe\Connection();
 
@@ -14,10 +14,10 @@ $client = new Eduframe\Client($connection);
 $data = [];
 
 // With include its possible to include nested relations.
-$data['products'] = $client->catalog_products()->all(['include' => 'labels']);
+$data['variants'] = $client->catalog_variants()->get();
 
 // To get teachers pass the correct role
-$data['teachers'] = $client->teachers()->all();
+$data['teachers'] = $client->teachers()->get();
 
 // Create a new lead
 $lead = $client->leads();
@@ -32,9 +32,9 @@ $lead->address = $client->addresses([
     'city' => 'Eindhoven',
     'country' => 'NL',
 ]);
-$lead->courses_leads = [$client->lead_interests([
-    "course_id" => 133,
-    "planned_course_id" => null
+$lead->lead_products = [$client->lead_products([
+    "catalog_product_id" => 123,
+    "catalog_variant_id" => 456,
 ])];
 
 $lead->save();
