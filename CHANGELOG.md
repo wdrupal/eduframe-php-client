@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Drieam/eduframe-php-client/compare/v1.3.1...v1.4.0) (2024-07-08)
+
+
+### Features
+
+* Allow to pass configuration ([9ddffba](https://github.com/Drieam/eduframe-php-client/commit/9ddffba3d5edee89876dfcee49b8f0de0811e9d4))
+
 ## [1.3.1](https://github.com/Drieam/eduframe-php-client/compare/v1.3.0...v1.3.1) (2024-02-09)
 
 
