@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$access_token = '<ACCESS_TOKEN>'; # testing program builder key
+$access_token = '<ACCESS_TOKEN>';
 
 $connection = new Eduframe\Connection();
 

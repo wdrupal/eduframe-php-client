@@ -37,6 +37,11 @@ class Connection
     private $client;
 
     /**
+     * @var Configuration
+     */
+    private $clientConfig;
+
+    /**
      * @var array Middlewares for the Guzzle 6 client
      */
     protected $middleWares = [];
@@ -45,6 +50,14 @@ class Connection
      * @var bool
      */
     private $stage = PRODUCTION;
+
+    /**
+     * Eduframe constructor.
+     * @param \Eduframe\Connection $connection
+     */
+    public function __construct(array $clientConfig = []) {
+        $this->clientConfig = $clientConfig;
+    }
 
     /**
      * @return Client
@@ -59,13 +72,15 @@ class Connection
             $handlerStack->push($middleWare);
         }
 
-        $args = [
+        $defaultClientConfig = [
             'http_errors' => true,
             'handler'     => $handlerStack,
             'expect'      => false,
         ];
 
-        $this->client = new Client($args);
+        $clientConfig = array_merge($defaultClientConfig, $this->clientConfig);
+
+        $this->client = new Client($clientConfig);
 
         return $this->client;
     }
