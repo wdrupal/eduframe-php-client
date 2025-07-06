@@ -288,7 +288,7 @@ class Connection
      */
     private function parseResponse(Response $response) {
         try {
-            Psr7\rewind_body($response);
+            Psr7\Message::rewindBody($response);
             $json = json_decode($response->getBody()->getContents(), true);
 
             return $json;
@@ -302,7 +302,7 @@ class Connection
      * @return bool | array
      */
     private function getNextParams($headerLine) {
-        $links = Psr7\parse_header($headerLine);
+        $links = Psr7\Header::parse($headerLine);
 
         foreach ($links as $link) {
             if ( isset($link['rel']) && $link['rel'] === 'next' ) {
@@ -339,7 +339,7 @@ class Connection
             return new ApiException('Response is NULL.', 0, $exception);
         }
 
-        Psr7\rewind_body($response);
+        Psr7\Message::rewindBody($response);
         $responseBody        = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
 
